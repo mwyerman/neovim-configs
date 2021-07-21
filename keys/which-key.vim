@@ -22,3 +22,12 @@ let g:which_key_map.t = {
       \ 'e': [':NERDTreeFocus', 'enable'],
       \ 'f': [':NERDTreeFind', 'find'],
       \}
+
+let g:which_key_map.p = {
+      \ 'name': '+pkg',
+      \ 's': [':PlugStatus', 'status'],
+      \ 'i': [':PlugInstall', 'install'],
+      \ 'u': [':PlugUpdate', 'update'],
+      \ 'c': [':PlugClean', 'clean'],
+      \ 'd': [':PlugDiff', 'diff'],
+      \}
