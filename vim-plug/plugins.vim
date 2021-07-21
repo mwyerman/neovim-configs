@@ -10,12 +10,19 @@ call plug#begin('$VIMHOME/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " File Explorer
-    Plug 'scrooloose/NERDTree'
+
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
     " Which Key
     Plug 'liuchengxu/vim-which-key'
+
+    " Devicons
+    Plug 'ryanoasis/vim-devicons' " Required NerdFont
+
+    " File Explorer
+    Plug 'preservim/NERDTree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Reqs NERDTree and devicons
 
 call plug#end()
