@@ -76,3 +76,16 @@ if enable_fzf == 1
             \ 'z' : [':FZF'          , 'FZF'],
             \ }
 endif
+
+" git menu
+if enable_git == 1
+      let g:which_key_map.g = {
+            \ 'name': '+git',
+            \ 'l': [':SignifyToggle', 'toggle line change labels'],
+            \ 'L': [':SignifyToggleHighlight', 'toggle line change highlights'],
+            \ 'w': [':GBrowse', 'show on github'],
+            \ 'c': [':GV', 'show commits'],
+            \ 'C': [':GV!', 'file commits'],
+            \ 'h': [':GV?', 'file history'],
+            \}
+endif
