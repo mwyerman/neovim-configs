@@ -14,18 +14,22 @@ call plug#begin('$VIMHOME/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
-    " Which Key
+    " Which Key (command directory)
     Plug 'liuchengxu/vim-which-key'
 
     " Devicons
     Plug 'ryanoasis/vim-devicons' " Required NerdFont
 
-    " File Explorer
+    " NERDTree (sidebar/file explorer)
     Plug 'preservim/NERDTree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Reqs NERDTree and devicons
 
     " Commentary (/ to comment)
     Plug 'tpope/vim-commentary'
+
+    " Airline (footer bar)
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
