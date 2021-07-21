@@ -25,4 +25,7 @@ call plug#begin('$VIMHOME/plugged')
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Reqs NERDTree and devicons
 
+    " Commentary (/ to comment)
+    Plug 'tpope/vim-commentary'
+
 call plug#end()

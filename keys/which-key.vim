@@ -7,6 +7,8 @@ vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>"
 " Define prefix dictionary
 let g:which_key_map =  {}
 
+let g:which_key_map['/'] = [':Commentary', 'comment']
+
 let g:which_key_map.f = {
                   \ 'name': '+file',
                   \ 's': [':w', 'save'],
