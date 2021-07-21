@@ -10,3 +10,7 @@ let enable_git = 1
 
 " select theme
 let theme = "onedark" " Set to 'none' to disable theme
+
+" additional navigation options
+let quickscope = 1 " single line navigation
+let sneak = 1 " full file navigation

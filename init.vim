@@ -13,3 +13,10 @@ if theme != "none"
   exec "source " . $VIMHOME . "\\ui\\themes\\" . theme . ".vim"
 endif
 
+if sneak == 1
+  source $VIMHOME\general\nav\sneak.vim
+endif
+
+if quickscope == 1
+  source $VIMHOME\general\nav\quickscope.vim
+endif

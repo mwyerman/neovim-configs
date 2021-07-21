@@ -55,4 +55,13 @@ call plug#begin('$VIMHOME/plugged')
     if theme == "onedark"
         Plug 'navarasu/onedark.nvim'
     endif
+
+    if quickscope == 1
+        Plug 'unblevable/quick-scope'
+    endif
+
+    if sneak == 1
+        Plug 'justinmk/vim-sneak'
+    endif
+
 call plug#end()
