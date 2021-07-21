@@ -13,3 +13,12 @@ let g:which_key_map.f = {
                   \ 'q': [':q!', 'quit without saving'],
                   \ 'Q': [':wq', 'save and quit'],
                   \}
+
+let g:which_key_map.t = {
+      \ 'name': '+tree',
+      \ 't': [':NERDTreeToggle', 'toggle'],
+      \ 'c': [':NERDTreeClose', 'close'],
+      \ 'm': [':NERDTreeMirror', 'mirror'],
+      \ 'e': [':NERDTreeFocus', 'enable'],
+      \ 'f': [':NERDTreeFind', 'find'],
+      \}
