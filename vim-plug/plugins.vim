@@ -39,4 +39,16 @@ call plug#begin('$VIMHOME/plugged')
         Plug 'airblade/vim-rooter'
     endif
 
+    " Git packages
+    if enable_fzf == 1
+        " Show +/-/~ line by line
+        Plug 'mhinz/vim-signify'
+        " Allows :Git commands from nvim
+        Plug 'tpope/vim-fugitive'
+        " Github integration
+        Plug 'tpope/vim-rhubarb'
+        " Git log graph
+        Plug 'junegunn/gv.vim'
+    endif
+
 call plug#end()
