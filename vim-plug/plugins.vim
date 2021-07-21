@@ -32,4 +32,11 @@ call plug#begin('$VIMHOME/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    " FZF and others, if enabled
+    if enable_fzf == 1
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'junegunn/fzf.vim'
+        Plug 'airblade/vim-rooter'
+    endif
+
 call plug#end()
