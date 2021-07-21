@@ -51,4 +51,8 @@ call plug#begin('$VIMHOME/plugged')
         Plug 'junegunn/gv.vim'
     endif
 
+    " Theme
+    if theme == "onedark"
+        Plug 'navarasu/onedark.nvim'
+    endif
 call plug#end()

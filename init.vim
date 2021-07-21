@@ -9,4 +9,7 @@ source $VIMHOME\keys\which-key.vim " Which-key config
 source $VIMHOME\ui\nerdtree.vim " NERDTree config
 source $VIMHOME\ui\airline.vim " airline config
 
+if theme != "none"
+  exec "source " . $VIMHOME . "\\ui\\themes\\" . theme . ".vim"
+endif
 
