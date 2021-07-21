@@ -15,4 +15,7 @@ call plug#begin('$VIMHOME/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
+    " Which Key
+    Plug 'liuchengxu/vim-which-key'
+
 call plug#end()
