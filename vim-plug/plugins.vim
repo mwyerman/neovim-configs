@@ -1,12 +1,5 @@
 " auto-install vim-plug
-if empty(glob('$VIMHOME/autoload/plug.vim'))
-  silent !curl -fLo $VIMHOME/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-call plug#begin('$VIMHOME/plugged')
+call plug#begin('/home/mwyerman/.config/nvim/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
@@ -19,6 +12,9 @@ call plug#begin('$VIMHOME/plugged')
 
     " Devicons
     Plug 'ryanoasis/vim-devicons' " Required NerdFont
+
+    " Colorizer
+    Plug 'norcalli/nvim-colorizer.lua'
 
     " NERDTree (sidebar/file explorer)
     Plug 'preservim/NERDTree'
