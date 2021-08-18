@@ -1,53 +1,65 @@
 " auto-install vim-plug
-if empty(glob('$VIMHOME/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('/home/mwyerman/.config/nvim/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " File Explorer
-    Plug 'scrooloose/NERDTree'
+
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Theme
     Plug 'arcticicestudio/nord-vim'
 
-    " Neovim Native LSP
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
+    " Which Key (command directory)
+    Plug 'liuchengxu/vim-which-key'
 
-    " Airline
+    " Devicons
+    Plug 'ryanoasis/vim-devicons' " Required NerdFont
+
+    " Colorizer
+    Plug 'norcalli/nvim-colorizer.lua'
+
+    " NERDTree (sidebar/file explorer)
+    Plug 'preservim/NERDTree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Reqs NERDTree and devicons
+
+    " Commentary (/ to comment)
+    Plug 'tpope/vim-commentary'
+
+    " Airline (footer bar)
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
-    " Startify Projct Management
-    Plug 'mhinz/vim-startify'
+    " FZF and others, if enabled
+    if enable_fzf == 1
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'junegunn/fzf.vim'
+        Plug 'airblade/vim-rooter'
+    endif
 
-    " fzf
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
+    " Git packages
+    if enable_fzf == 1
+        " Show +/-/~ line by line
+        Plug 'mhinz/vim-signify'
+        " Allows :Git commands from nvim
+        Plug 'tpope/vim-fugitive'
+        " Github integration
+        Plug 'tpope/vim-rhubarb'
+        " Git log graph
+        Plug 'junegunn/gv.vim'
+    endif
 
-    " Which Key
-    Plug 'liuchengxu/vim-which-key'
+    " Theme
+    if theme == "onedark"
+        Plug 'navarasu/onedark.nvim'
+    endif
 
-    " NERD Commenter
-    Plug 'preservim/nerdcommenter'
+    if quickscope == 1
+        Plug 'unblevable/quick-scope'
+    endif
 
-    " Git
-    Plug 'mhinz/vim-signify'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb'
-    Plug 'junegunn/gv.vim'
-
-    " Quick Scope
-    Plug 'unblevable/quick-scope'
-
-    " Sneak
-    Plug 'justinmk/vim-sneak'
+    if sneak == 1
+        Plug 'justinmk/vim-sneak'
+    endif
 
 call plug#end()

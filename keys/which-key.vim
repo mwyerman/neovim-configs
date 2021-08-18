@@ -1,73 +1,91 @@
-" Map leader to which_key
-nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+"Define space as leader key
+call which_key#register('<Space>', "g:which_key_map")
 
-" Create map to add keys to
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>"
+
+" Define prefix dictionary
 let g:which_key_map =  {}
-" Define a separator
-let g:which_key_sep = '→'
-" set timeoutlen=100
 
+let g:which_key_map['/'] = [':Commentary', 'comment']
 
-" Not a fan of floating windows for this
-let g:which_key_use_floating_win = 0
+let g:which_key_map.f = {
+                  \ 'name': '+file',
+                  \ 's': [':w', 'save'],
+                  \ 'q': [':q!', 'quit without saving'],
+                  \ 'Q': [':wq', 'save and quit'],
+                  \}
 
-" Change the colors if you want
-highlight default link WhichKey          Operator
-highlight default link WhichKeySeperator DiffAdded
-highlight default link WhichKeyGroup     Identifier
-highlight default link WhichKeyDesc      Function
+" NERDTree / File explorer
+let g:which_key_map.t = {
+      \ 'name': '+tree',
+      \ 't': [':NERDTreeToggle', 'toggle'],
+      \ 'c': [':NERDTreeClose', 'close'],
+      \ 'm': [':NERDTreeMirror', 'mirror'],
+      \ 'e': [':NERDTreeFocus', 'enable'],
+      \ 'f': [':NERDTreeFind', 'find'],
+      \}
 
-" Hide status line
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+" vim-plug package manager
+let g:which_key_map.p = {
+      \ 'name': '+pkg',
+      \ 's': [':PlugStatus', 'status'],
+      \ 'i': [':PlugInstall', 'install'],
+      \ 'u': [':PlugUpdate', 'update'],
+      \ 'c': [':PlugClean', 'clean'],
+      \ 'd': [':PlugDiff', 'diff'],
+      \}
 
-" Single mappings
-let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
-let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['n'] = [ ':NERDTreeFocus'             , 'file tree' ]
-let g:which_key_map['N'] = [ ':NERDTreeFind'              , 'find in file tree' ]
-let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
-"let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
-
-let g:which_key_map.g = {
-      \ 'name' : '+git' ,
-      \ 's' : [':SignifyToggle', 'signify'],
-      \ 'S' : [':SignifyToggleHighlight', 'signify'],
-      \ 'v' : [':GV', 'repository commits'],
-      \ 'V!' : [':GV', 'file commits'],
-      \ }
+" window - buffer changes
+let g:which_key_map.w = {
+      \ 'name': '+window',
+      \ 'h': ['<C-W>s', 'split below'],
+      \ 'v': ['<C-W>v', 'split right'],
+      \ 'b': ['<C-W>=', 'balance splits'],
+      \ 's': ['<C-W>r', 'swap splits'],
+      \ 'o': ['<C-W>o', 'close other splits'],
+      \}
 
 " s is for search
-let g:which_key_map.s = {
-      \ 'name' : '+search' ,
-      \ '/' : [':History/'     , 'history'],
-      \ ';' : [':Commands'     , 'commands'],
-      \ 'a' : [':Ag'           , 'text Ag'],
-      \ 'b' : [':BLines'       , 'current buffer'],
-      \ 'B' : [':Buffers'      , 'open buffers'],
-      \ 'c' : [':Commits'      , 'commits'],
-      \ 'C' : [':BCommits'     , 'buffer commits'],
-      \ 'f' : [':Files'        , 'files'],
-      \ 'g' : [':GFiles'       , 'git files'],
-      \ 'G' : [':GFiles?'      , 'modified git files'],
-      \ 'h' : [':History'      , 'file history'],
-      \ 'H' : [':History:'     , 'command history'],
-      \ 'l' : [':Lines'        , 'lines'] ,
-      \ 'm' : [':Marks'        , 'marks'] ,
-      \ 'M' : [':Maps'         , 'normal maps'] ,
-      \ 'p' : [':Helptags'     , 'help tags'] ,
-      \ 'P' : [':Tags'         , 'project tags'],
-      \ 's' : [':Snippets'     , 'snippets'],
-      \ 'S' : [':Colors'       , 'color schemes'],
-      \ 't' : [':Rg'           , 'text Rg'],
-      \ 'T' : [':BTags'        , 'buffer tags'],
-      \ 'w' : [':Windows'      , 'search windows'],
-      \ 'y' : [':Filetypes'    , 'file types'],
-      \ 'z' : [':FZF'          , 'FZF'],
-      \ }
+if enable_fzf == 1
+      let g:which_key_map.s = {
+            \ 'name' : '+search' ,
+            \ '/' : [':History/'     , 'history'],
+            \ ';' : [':Commands'     , 'commands'],
+            \ 'a' : [':Ag'           , 'text Ag'],
+            \ 'b' : [':BLines'       , 'current buffer'],
+            \ 'B' : [':Buffers'      , 'open buffers'],
+            \ 'c' : [':Commits'      , 'commits'],
+            \ 'C' : [':BCommits'     , 'buffer commits'],
+            \ 'f' : [':Files'        , 'files'],
+            \ 'g' : [':GFiles'       , 'git files'],
+            \ 'G' : [':GFiles?'      , 'modified git files'],
+            \ 'h' : [':History'      , 'file history'],
+            \ 'H' : [':History:'     , 'command history'],
+            \ 'l' : [':Lines'        , 'lines'] ,
+            \ 'm' : [':Marks'        , 'marks'] ,
+            \ 'M' : [':Maps'         , 'normal maps'] ,
+            \ 'p' : [':Helptags'     , 'help tags'] ,
+            \ 'P' : [':Tags'         , 'project tags'],
+            \ 's' : [':Snippets'     , 'snippets'],
+            \ 'S' : [':Colors'       , 'color schemes'],
+            \ 't' : [':Rg'           , 'text Rg'],
+            \ 'T' : [':BTags'        , 'buffer tags'],
+            \ 'w' : [':Windows'      , 'search windows'],
+            \ 'y' : [':Filetypes'    , 'file types'],
+            \ 'z' : [':FZF'          , 'FZF'],
+            \ }
+endif
 
-" Register which key map
-call which_key#register('<Space>', "g:which_key_map")
+" git menu
+if enable_git == 1
+      let g:which_key_map.g = {
+            \ 'name': '+git',
+            \ 'l': [':SignifyToggle', 'toggle line change labels'],
+            \ 'L': [':SignifyToggleHighlight', 'toggle line change highlights'],
+            \ 'w': [':GBrowse', 'show on github'],
+            \ 'c': [':GV', 'show commits'],
+            \ 'C': [':GV!', 'file commits'],
+            \ 'h': [':GV?', 'file history'],
+            \}
+endif
