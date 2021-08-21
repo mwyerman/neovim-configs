@@ -10,4 +10,13 @@ return require('packer').startup(function()
 
 	-- vinegar (file navigation)
 	use 'tpope/vim-vinegar'
+
+	-- which-key (keybindings)
+	use {
+		"folke/which-key.nvim",
+		config = function()
+		    require("which-key").setup {
+
+		}
+	end}
 end)
