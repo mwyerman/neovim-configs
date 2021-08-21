@@ -1,3 +1,3 @@
 require('plugins')
 
-require('lualine').setup()
+require('ui/lualine')
