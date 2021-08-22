@@ -18,3 +18,15 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true })
 
+-- code navigation
+vim.api.nvim_set_keymap('n', 'gd', 'lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gD', 'lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gr', 'lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gi', 'lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'K', 'lua vim.lsp.buf.hover()()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', 'lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-n>', 'lua vim.lsp.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-p>', 'lua vim.lsp.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+
+-- autoformat
+-- TODO
