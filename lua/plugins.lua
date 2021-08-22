@@ -23,4 +23,7 @@ return require('packer').startup(function()
 
 		}
 	end}
+
+    -- neovim lsp (language server protocol)
+    use 'neovim/nvim-lspconfig'
 end)
