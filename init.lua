@@ -13,3 +13,7 @@ require('ui/themes/aurora')
 
 -- transparent background
 require('ui/transparency')
+
+-- Language Server Protocols
+require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pyright.setup{}
