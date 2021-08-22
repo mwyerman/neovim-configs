@@ -26,4 +26,7 @@ return require('packer').startup(function()
 
     -- neovim lsp (language server protocol)
     use 'neovim/nvim-lspconfig'
+
+    -- lsp autocomplete
+    use 'hrsh7th/nvim-compe'
 end)

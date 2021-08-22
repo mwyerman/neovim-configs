@@ -17,3 +17,6 @@ require('ui/transparency')
 -- Language Server Protocols
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.pyright.setup{}
+
+-- compe autocomplete
+require('lsp/compe')
