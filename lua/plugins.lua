@@ -2,6 +2,10 @@ return require('packer').startup(function()
 	-- Packer (package manager)
 	use 'wbthomason/packer.nvim'
 
+    -- themes
+    use 'christianchiarulli/nvcode-color-schemes.vim'
+    use 'nvim-treesitter/nvim-treesitter'
+
 	-- lualine (statusline)
 	use {
 		'hoob3rt/lualine.nvim',
