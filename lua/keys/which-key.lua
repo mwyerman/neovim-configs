@@ -11,3 +11,14 @@ wk.register({
         C = { ":PackerCompile<cr>", "compile" },
     }
 }, { prefix = "<leader>" })
+
+wk.register({
+    f = {
+        name = "file",
+        w = { ":w<cr>", "write" },
+        W = { ":wq<cr>", "write & quit" },
+        q = { ":q<cr>", "quit" },
+        Q = { ":q!<cr>", "quit without saving" },
+        S = { ":w !sudo tee %<cr>", "write with sudo" },
+    }
+}, { prefix = "<leader>" })
