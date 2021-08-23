@@ -32,4 +32,10 @@ return require('packer').startup(function()
 
     -- lsp autocomplete
     use 'hrsh7th/nvim-compe'
+
+    -- telescope
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
 end)
