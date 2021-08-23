@@ -18,6 +18,14 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true })
 
+-- comments
+-- disable default comments and replace with new ones in order to
+-- prevent cancelling selection when in visual mode
+vim.g.kommentary_create_default_mappings = false
+vim.api.nvim_set_keymap("n", "gcc", "<Plug>kommentary_line_default", {})
+vim.api.nvim_set_keymap("n", "gc", "<Plug>kommentary_motion_default", {})
+vim.api.nvim_set_keymap("v", "gc", "<Plug>kommentary_visual_default", {})
+
 -- code navigation
 vim.api.nvim_set_keymap('n', 'gd', 'lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gD', 'lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })

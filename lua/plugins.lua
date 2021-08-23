@@ -12,6 +12,9 @@ return require('packer').startup(function()
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
+    -- kommentary (commenter)
+    use 'b3nj5m1n/kommentary'
+
 	-- vinegar (file navigation)
 	use 'tpope/vim-vinegar'
 
