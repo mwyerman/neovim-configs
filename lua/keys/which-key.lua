@@ -22,3 +22,13 @@ wk.register({
         S = { ":w !sudo tee %<cr>", "write with sudo" },
     }
 }, { prefix = "<leader>" })
+
+wk.register({
+    s = {
+        name = "search",
+        f = { ":Telescope find_files<cr>", "files" },
+        g = { ":Telescope live_grep<cr>", "grep" },
+        b = { ":Telescope buffers<cr>", "buffers" },
+        h = { ":Telescope help_tags<cr>", "help" },
+    }
+})
