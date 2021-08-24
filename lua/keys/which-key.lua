@@ -9,10 +9,7 @@ wk.register({
         u = { ":PackerUpdate<cr>", "update" },
         c = { ":PackerClean<cr>", "clean" },
         C = { ":PackerCompile<cr>", "compile" },
-    }
-}, { prefix = "<leader>" })
-
-wk.register({
+    },
     f = {
         name = "file",
         w = { ":w<cr>", "write" },
@@ -20,10 +17,7 @@ wk.register({
         q = { ":q<cr>", "quit" },
         Q = { ":q!<cr>", "quit without saving" },
         S = { ":w !sudo tee %<cr>", "write with sudo" },
-    }
-}, { prefix = "<leader>" })
-
-wk.register({
+    },
     s = {
         name = "search",
         f = { ":Telescope find_files<cr>", "files" },
@@ -31,6 +25,7 @@ wk.register({
         g = { ":Telescope live_grep<cr>", "grep" },
         b = { ":Telescope buffers<cr>", "buffers" },
         h = { ":Telescope help_tags<cr>", "help" },
+
         r = { ":Telescope lsp_references<cr>", "references" },
         S = { ":Telescope lsp_document_symbols<cr>", "doc symbols" },
         s = { ":Telescope lsp_workspace_symbols<cr>", "workspace symbols" },
