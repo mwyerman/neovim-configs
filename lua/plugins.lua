@@ -31,7 +31,13 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
 
     -- lsp autocomplete
-    use 'hrsh7th/nvim-compe'
+    use {
+        'hrsh7th/nvim-compe',
+        requires = {
+            {'hrsh7th/vim-vsnip'},
+            {'hrsh7th/vim-vsnip-integ', opt = true}
+        }
+    }
 
     -- telescope
     use {
