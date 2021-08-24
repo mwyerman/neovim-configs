@@ -47,4 +47,10 @@ return require('packer').startup(function()
 
     -- git blame
     use 'f-person/git-blame.nvim'
+
+    -- vim-doge (docstring generator)
+    use {
+        'kkoomen/vim-doge',
+        run = ':call doge#install()'
+    }
 end)
