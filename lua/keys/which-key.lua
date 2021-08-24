@@ -32,4 +32,6 @@ wk.register({
 
         t = { ":Telescope treesitter<cr>", "treesitter" },
     },
+    M = {":!make<cr>", "make"},
+    C = {":!make clean<cr>", "clean"},
 }, { prefix = "<leader>" })
