@@ -30,3 +30,6 @@ require'lspconfig'.cmake.setup{}
 
 -- compe autocomplete
 require('dev/compe')
+
+-- telescope
+require('dev/telescope')

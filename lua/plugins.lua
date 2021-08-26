@@ -57,6 +57,12 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- telescope fuzzy finder
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+    }
+
     -- git blame
     use 'f-person/git-blame.nvim'
 
