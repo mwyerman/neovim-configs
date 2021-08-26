@@ -15,6 +15,9 @@ return require('packer').startup(function()
     -- luatab (tabs)
     use { 'akinsho/bufferline.nvim', requires='kyazdani42/nvim-web-devicons' }
 
+    -- bufdelete (smarter buffer delete)
+    use 'famiu/bufdelete.nvim'
+
     -- kommentary (commenter)
     use 'b3nj5m1n/kommentary'
 
