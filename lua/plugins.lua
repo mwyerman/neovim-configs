@@ -21,6 +21,9 @@ return require('packer').startup(function()
     -- kommentary (commenter)
     use 'b3nj5m1n/kommentary'
 
+    -- auto pairs (auto close brackets)
+    use 'jiangmiao/auto-pairs'
+
 	-- vinegar (file navigation)
     use 'jeetsukumaran/vim-filebeagle'
 
