@@ -20,3 +20,5 @@ o.relativenumber = true         -- relative line numbers
 o.cursorline = true	        	-- highlight current cursor line
 o.showmode = false	        	-- disables "-- INSERT --" text
 o.clipboard = "unnamedplus" 	-- clipboard support
+
+o.hidden = true                 -- allow hidden buffers
