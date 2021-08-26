@@ -29,4 +29,4 @@ require'lspconfig'.cmake.setup{}
 -- require'lspconfig'.clangd.setup{}
 
 -- compe autocomplete
-require('lsp/compe')
+require('dev/compe')
