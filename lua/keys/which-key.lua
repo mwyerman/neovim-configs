@@ -20,17 +20,28 @@ wk.register({
     },
     s = {
         name = "search",
+        -- files
         f = { ":Telescope find_files<cr>", "files" },
         F = { ":Telescope file_browser<cr>", "file browser" },
-        g = { ":Telescope live_grep<cr>", "grep" },
-        b = { ":Telescope buffers<cr>", "buffers" },
-        h = { ":Telescope help_tags<cr>", "help" },
 
+        -- text
+        t = { ":Telescope live_grep<cr>", "grep" },
+        b = { ":Telescope current_buffer_fuzzy_find<cr>", "buffers" },
+
+        -- lsp
         r = { ":Telescope lsp_references<cr>", "references" },
         S = { ":Telescope lsp_document_symbols<cr>", "doc symbols" },
         s = { ":Telescope lsp_workspace_symbols<cr>", "workspace symbols" },
 
-        t = { ":Telescope treesitter<cr>", "treesitter" },
+        -- git
+        g = {
+            name = "git",
+            c = { ":Telescope git_bcommits<cr>", "commits" },
+            C = { ":Telescope git_commits<cr>", "commits cmd" },
+            s = { ":Telescope git_status<cr>", "status" },
+            S = { ":Telescope git_stash<cr>", "stash" },
+            b = { ":Telescope git_branches<cr>", "branches" },
+        }
     },
     g = {
         name = "git",
