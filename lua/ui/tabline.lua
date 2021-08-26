@@ -1,1 +1,2 @@
-vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
+vim.opt.termguicolors = true
+require("bufferline").setup{}

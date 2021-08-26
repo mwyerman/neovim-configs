@@ -13,7 +13,7 @@ return require('packer').startup(function()
 	}
 
     -- luatab (tabs)
-    use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
+    use { 'akinsho/bufferline.nvim', requires='kyazdani42/nvim-web-devicons' }
 
     -- kommentary (commenter)
     use 'b3nj5m1n/kommentary'
