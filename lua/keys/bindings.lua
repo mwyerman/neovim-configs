@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
---[[ vim.api.nvim_set_keymap('i', '<c-j>', '\\<C-n>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<c-k>', '\\<C-p>', { noremap = true }) ]]
 vim.cmd([[
     inoremap <expr> <c-j> ("\<C-n>")
     inoremap <expr> <c-k> ("\<C-p>")
