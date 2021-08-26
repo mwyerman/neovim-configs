@@ -57,6 +57,9 @@ return require('packer').startup(function()
     -- git blame
     use 'f-person/git-blame.nvim'
 
+    -- lazygit
+    use 'kdheepak/lazygit.nvim'
+
     -- vim-doge (docstring generator)
     use {
         'kkoomen/vim-doge',

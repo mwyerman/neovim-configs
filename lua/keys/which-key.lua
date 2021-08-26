@@ -32,6 +32,10 @@ wk.register({
 
         t = { ":Telescope treesitter<cr>", "treesitter" },
     },
+    g = {
+        name = "git",
+        g = { ":LazyGit<cr>", "lazygit" },
+    },
     M = {":!make<cr>", "make"},
     C = {":!make clean<cr>", "clean"},
 }, { prefix = "<leader>" })
