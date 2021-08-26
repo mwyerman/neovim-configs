@@ -22,7 +22,7 @@ return require('packer').startup(function()
     use 'b3nj5m1n/kommentary'
 
 	-- vinegar (file navigation)
-	use 'tpope/vim-vinegar'
+    use 'jeetsukumaran/vim-filebeagle'
 
 	-- which-key (keybindings)
 	use {
