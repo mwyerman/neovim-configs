@@ -33,3 +33,5 @@ require('dev/compe')
 
 -- telescope
 require('dev/telescope')
+
+require('dev/gitsigns')
