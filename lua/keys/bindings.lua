@@ -19,8 +19,8 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 
 -- Buffer controls
-vim.api.nvim_set_keymap('n', '<C-]>', ':BufferLineCycleNext<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-[>', ':BufferLineCyclePrev<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '}', ':BufferLineCycleNext<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '{', ':BufferLineCyclePrev<cr>', { noremap = true, silent = true })
 
 -- jk or kj to leave insert mode
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true })
