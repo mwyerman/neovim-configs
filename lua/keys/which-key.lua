@@ -47,6 +47,16 @@ wk.register({
         name = "git",
         g = { ":LazyGit<cr>", "lazygit" },
     },
+    b = {
+        name = "buffers",
+        n = { ":enew<cr>", "new" },
+        d = { ":split<cr>", "split down" },
+        s = { ":vsplit<cr>", "split right" },
+        c = { ":Bdelete<cr>", "close buffer"},
+        w = { ":close<cr>", "close split"},
+        ["]"] = { ":BufferLineMoveNext", "move right"},
+        ["["] = { ":BufferLineMovePrev", "move left"},
+    },
     M = {":!make<cr>", "make"},
     C = {":!make clean<cr>", "clean"},
 }, { prefix = "<leader>" })
