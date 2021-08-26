@@ -24,6 +24,9 @@ return require('packer').startup(function()
     -- auto pairs (auto close brackets)
     use 'jiangmiao/auto-pairs'
 
+    -- cursor line (highlight selection)
+    use 'yamatsum/nvim-cursorline'
+
 	-- vinegar (file navigation)
     use 'jeetsukumaran/vim-filebeagle'
 
