@@ -12,6 +12,9 @@ return require('packer').startup(function()
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
+    -- luatab (tabs)
+    use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
+
     -- kommentary (commenter)
     use 'b3nj5m1n/kommentary'
 

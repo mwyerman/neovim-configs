@@ -7,6 +7,7 @@ require('keys/which-key')
 
 -- ui
 require('ui/lualine')
+require('ui/tabline')
 
 -- themes
 require('ui/themes/aurora')
