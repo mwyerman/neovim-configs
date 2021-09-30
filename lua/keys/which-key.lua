@@ -57,6 +57,14 @@ wk.register({
         ["]"] = { ":BufferLineMoveNext", "move right"},
         ["["] = { ":BufferLineMovePrev", "move left"},
     },
+    h = {
+        name = "hop",
+        w = { ":HopWord<cr>", "word" },
+        l = { ":HopLine<cr>", "line" },
+        c = { ":HopChar1<cr>", "1-char" },
+        v = { ":HopChar2<cr>", "2-char" },
+        p = { ":HopPattern<cr>", "pattern" },
+    },
     M = {":!make<cr>", "make"},
     C = {":!make clean<cr>", "clean"},
 }, { prefix = "<leader>" })
