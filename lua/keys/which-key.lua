@@ -65,6 +65,7 @@ wk.register({
         v = { ":HopChar2<cr>", "2-char" },
         p = { ":HopPattern<cr>", "pattern" },
     },
-    M = {":!make<cr>", "make"},
+    m = {":!make<cr>", "make"},
+    M = {":!make program<cr>", "program"},
     C = {":!make clean<cr>", "clean"},
 }, { prefix = "<leader>" })
