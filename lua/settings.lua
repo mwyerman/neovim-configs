@@ -21,4 +21,7 @@ o.cursorline = true	        	-- highlight current cursor line
 o.showmode = false	        	-- disables "-- INSERT --" text
 o.clipboard = "unnamedplus" 	-- clipboard support
 
+o.list = true
+o.listchars = "tab: > ,eol:¬,space:⋅"
+
 o.hidden = true                 -- allow hidden buffers
