@@ -25,8 +25,8 @@ wk.register({
         F = { ":Telescope file_browser<cr>", "file browser" },
 
         -- text
-        t = { ":Telescope live_grep<cr>", "grep" },
         b = { ":Telescope current_buffer_fuzzy_find<cr>", "buffers" },
+		g = { ":Telescope live_grep<cr>", "grep" },
 
         -- lsp
         r = { ":Telescope lsp_references<cr>", "references" },
