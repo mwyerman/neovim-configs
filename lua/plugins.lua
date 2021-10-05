@@ -74,6 +74,10 @@ return require('packer').startup(function()
         }
     }
 
+    -- formatter
+    use {
+        'mhartington/formatter.nvim'
+    }
 
     -- lazygit
     use 'kdheepak/lazygit.nvim'

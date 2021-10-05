@@ -35,3 +35,5 @@ require('dev/compe')
 require('dev/telescope')
 
 require('dev/gitsigns')
+
+require('dev/format')
