@@ -68,5 +68,5 @@ wk.register({
     m = {":!make<cr>", "make"},
     M = {":!make program<cr>", "program"},
     C = {":!make clean<cr>", "clean"},
-    p = {":!python '%:p'<cr>", "python %"},
+    P = {":!python '%:p'<cr>", "python %"},
 }, { prefix = "<leader>" })
