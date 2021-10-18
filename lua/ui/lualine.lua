@@ -1,3 +1,3 @@
-require('lualine').setup{
-    options = { theme = 'ayu_mirage' }
-}
+require("lualine").setup({
+	options = { theme = "ayu_mirage" },
+})
