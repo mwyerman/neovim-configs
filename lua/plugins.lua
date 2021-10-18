@@ -18,8 +18,13 @@ return require("packer").startup(function()
 	-- bufdelete (smarter buffer delete)
 	use("famiu/bufdelete.nvim")
 
-	-- kommentary (commenter)
-	use("b3nj5m1n/kommentary")
+	-- commnent.nvim
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
 
 	-- auto pairs (auto close brackets)
 	use("jiangmiao/auto-pairs")
