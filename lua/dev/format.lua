@@ -37,6 +37,16 @@ require("formatter").setup({
 				}
 			end,
 		},
+		c = {
+			function()
+				return {
+					exe = "clang-format",
+					args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
+					stdin = true,
+					cwd = vim.fn.expand("%:p:h"), -- Run clang-format in cwd of the file.
+				}
+			end,
+		},
 	},
 })
 
@@ -44,7 +54,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost *.py,*.lua FormatWrite
+    autocmd BufWritePost *.py,*.lua,*.c FormatWrite
 augroup END
 ]],
 	true
