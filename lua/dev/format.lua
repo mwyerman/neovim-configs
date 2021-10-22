@@ -29,6 +29,13 @@ require("formatter").setup({
 					stdin = false,
 				}
 			end,
+			function()
+				return {
+					exe = "style-doc",
+					-- args = { " --max_length ", " 79 " },
+					stdin = false,
+				}
+			end,
 		},
 	},
 })
