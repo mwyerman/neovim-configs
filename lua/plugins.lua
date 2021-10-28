@@ -106,4 +106,9 @@ return require("packer").startup(function()
 		"TimUntersberger/neogit",
 		requires = "nvim-lua/plenary.nvim",
 	})
+
+    -- git fugitive (:Git command)
+    use({
+        "doronbehar/nvim-fugitive",
+    })
 end)
