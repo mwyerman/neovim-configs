@@ -49,13 +49,3 @@ require("formatter").setup({
 		},
 	},
 })
-
-vim.api.nvim_exec(
-	[[
-augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePost *.py,*.lua,*.c FormatWrite
-augroup END
-]],
-	true
-)
