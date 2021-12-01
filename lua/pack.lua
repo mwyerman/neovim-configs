@@ -6,4 +6,10 @@ return require('packer').startup(function()
 	    require('plugins/whichkey')
 	end,
     })
+    use({
+	'folke/tokyonight.nvim',
+	config = function()
+	    require('plugins/themes/tokyonight')
+	end
+    })
 end)
