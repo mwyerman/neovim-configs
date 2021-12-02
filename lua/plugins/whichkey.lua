@@ -34,7 +34,28 @@ wk.register({
 	    d = { ":Telescope git_status<cr><esc>", "diff" },
 	},
     },
-    g = { ":LazyGit<cr>", "lazygit" },
+    g = {
+	name = "git",
+	g = { ":LazyGit<cr>", "lazygit" },
+	s = { "<cmd>lua require'gitsigns'.stage_hunk()<CR>", "stage hunk" },
+	u = { "<cmd>lua require'gitsigns'.undo_stage_hunk()<CR>", "undo stage hunk" },
+	r = { "<cmd>lua require'gitsigns'.reset_hunk()<CR>", "reset hunk" },
+	R = { "<cmd>lua require'gitsigns'.reset_buffer()<CR>", "reset buffer" },
+	p = { "<cmd>lua require'gitsigns'.preview_hunk()<CR>", "preview hunk" },
+	b = { "<cmd>lua require'gitsigns'.blame_line{full=true}<CR>", "git blame" },
+	S = { "<cmd>lua require'gitsigns'.stage_buffer()<CR>", "stage buffer" },
+    },
 }, {
     prefix = "<leader>",
+})
+
+wk.register({
+    g = {
+	name = "git",
+	s = { "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", "stage hunks" },
+	r = { "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", "reset hunks" },
+    }
+}, {
+    prefix = "<leader>",
+    mode = "v",
 })
