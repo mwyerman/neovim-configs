@@ -33,7 +33,8 @@ wk.register({
 	    b = { ":Telescope git_branches<cr><esc>", "branches" },
 	    d = { ":Telescope git_status<cr><esc>", "diff" },
 	},
-    }
+    },
+    g = { ":LazyGit<cr>", "lazygit" },
 }, {
     prefix = "<leader>",
 })

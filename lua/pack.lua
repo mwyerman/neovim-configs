@@ -41,4 +41,6 @@ return require('packer').startup(function()
 	    require('plugins/telescope')
 	end,
     }
+
+    use { 'kdheepak/lazygit.nvim' }
 end)
