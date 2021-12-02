@@ -22,7 +22,7 @@ wk.register({
 	name = "telescope",
 	e = { ":Telescope file_browser<cr><esc>", "file browser" },
 	f = { ":Telescope find_files<cr>", "files" },
-	g = { ":Telescope live_grep<cr>", "grep" },
+	t = { ":Telescope live_grep<cr>", "grep" },
 	b = { ":Telescope buffers<cr><esc>", "buffers" },
 	h = { ":Telescope help_tags<cr>", "help" },
 	o = { ":Telescope vim_options<cr>", "options" },
