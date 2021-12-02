@@ -33,4 +33,12 @@ return require('packer').startup(function()
 	    require('plugins/tabline')
 	end,
     }
+
+    use {
+	'nvim-telescope/telescope.nvim',
+	requires = {'nvim-lua/plenary.nvim'},
+	config = function()
+	    require('plugins/telescope')
+	end,
+    }
 end)
