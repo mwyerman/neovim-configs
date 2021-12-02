@@ -31,7 +31,7 @@ return require('packer').startup(function()
     use {
 	'kdheepak/tabline.nvim',
 	requires = {
-	    {'hoob3rt/lualine.nvim', opt=true,},
+	    {'hoob3rt/lualine.nvim', opt = true},
 	    {'kyazdani42/nvim-web-devicons', opt = true},
 	},
 	config = function()
@@ -51,4 +51,22 @@ return require('packer').startup(function()
     }
 
     use { 'kdheepak/lazygit.nvim' }
+
+    use {
+	'lewis6991/gitsigns.nvim',
+	requires = {'nvim-lua/plenary.nvim'},
+	config = function()
+	    require('plugins/gitsigns')
+	end,
+    }
+
+    use { 'tpope/vim-fugitive' }
+
+    use {
+	'f-person/git-blame.nvim',
+	config = function()
+	    require('plugins/gitblame')
+	end
+    }
+
 end)
