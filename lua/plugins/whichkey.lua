@@ -11,6 +11,13 @@ wk.register({
 	s = { ":PackerSync<cr>", "sync" },
 	c = { ":PackerClean<cr>", "clean" },
     },
+    l = { ":bnext<cr>", "next tab" },
+    h = { ":bprevious<cr>", "prev tab" },
+    b = {
+	name = "buffer",
+	q = { ":bp <BAR> bd #<cr>", "close tab" },
+	l = { ":ls<cr>", "list buffers" },
+    },
 }, {
     prefix = "<leader>",
 })

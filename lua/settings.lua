@@ -21,3 +21,4 @@ o.mouse = "a"
 o.cursorline = true
 o.clipboard = "unnamedplus"
 o.wrap = false
+o.hidden = true
