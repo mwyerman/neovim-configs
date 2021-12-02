@@ -1,21 +1,21 @@
 return require('packer').startup(function()
-    use{'wbthomason/packer.nvim'}
+    use {'wbthomason/packer.nvim'}
 
-    use{
+    use {
 	'folke/which-key.nvim',
 	config = function()
 	    require('plugins/whichkey')
 	end,
     }
 
-    use{
+    use {
 	'folke/tokyonight.nvim',
 	config = function()
 	    require('plugins/themes/tokyonight')
 	end,
     }
 
-    use{
+    use {
 	'nvim-lualine/lualine.nvim',
 	requires = {'kyazdani42/nvim-web-devicons', opt = true},
 	config = function()
@@ -23,7 +23,7 @@ return require('packer').startup(function()
 	end,
     }
 
-    use{
+    use {
 	'kdheepak/tabline.nvim',
 	requires = {
 	    {'hoob3rt/lualine.nvim', opt=true,},
