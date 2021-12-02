@@ -69,4 +69,12 @@ return require('packer').startup(function()
 	end
     }
 
+    use {
+	'phaazon/hop.nvim',
+	branch = 'v1',
+	config = function()
+	    require('plugins/hop')
+	end,
+    }
+
 end)
