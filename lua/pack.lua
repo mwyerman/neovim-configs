@@ -50,6 +50,20 @@ return require('packer').startup(function()
 	end,
     }
 
+    use {
+	'windwp/nvim-autopairs',
+	config = function()
+	    require('plugins/autopairs')
+	end
+    }
+
+    use {
+	'windwp/nvim-ts-autotag',
+	config = function()
+	    require('plugins/autotag')
+	end
+    }
+
     use { 'kdheepak/lazygit.nvim' }
 
     use {
