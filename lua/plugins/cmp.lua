@@ -21,28 +21,10 @@ cmp.setup{
 	['<C-f>'] = cmp.mapping.scroll_docs(4),
 	['<C-Space>'] = cmp.mapping.complete(),
 	['<C-e>'] = cmp.mapping.close(),
-	['<CR>'] = cmp.mapping.confirm {
+	['<Tab>'] = cmp.mapping.confirm {
 	    behavior = cmp.ConfirmBehavior.Replace,
 	    select = true,
 	},
-	['<Tab>'] = function(fallback)
-	    if cmp.visible() then
-		cmp.select_next_item()
-	    elseif luasnip.expand_or_jumpable() then
-		luasnip.expand_or_jump()
-	    else
-		fallback()
-	    end
-	end,
-	['<S-Tab>'] = function(fallback)
-	    if cmp.visible() then
-		cmp.select_prev_item()
-	    elseif luasnip.jumpable(-1) then
-		luasnip.jump(-1)
-	    else
-		fallback()
-	    end
-	end,
     },
     sources = {
 	{ name = 'nvim_lsp' },
@@ -58,31 +40,15 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- LSP
 ------------------------------------------------------------
 
----------------------------------------------
--- python
----------------------------------------------
--- `python -m pip install python-lsp-server`
-lsp.pylsp.setup{
-    -- capabilities = capabilies,
+local lsp_servers = {
+    'pylsp',
+    'pyright',
+    'clangd',
+    'eslint',
 }
 
--- `npm i -g pyright`
-lsp.pyright.setup{
-    capabilities = capabilies,
-}
-
----------------------------------------------
--- c
----------------------------------------------
--- llvm 9.0+ required
-lsp.clangd.setup{
-    capabilities = capabilies,
-}
-
----------------------------------------------
--- js/ts
----------------------------------------------
--- `npm i -g vscode-langservers-extracted`
-lsp.eslint.setup{
-    capabilities = capabilies,
-}
+for _, lsp_server in ipairs(lsp_servers) do
+    lsp[lsp_server].setup{
+	capabilies = capabilies,
+    }
+end
