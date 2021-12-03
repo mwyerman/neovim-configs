@@ -9,8 +9,8 @@ o.shiftwidth = 4
 o.smarttab = true
 
 -- keep cursor near center of screen
-o.scrolloff = 16
-o.sidescrolloff = 16
+o.scrolloff = 8
+o.sidescrolloff = 8
 
 -- improved search
 o.ignorecase = true
