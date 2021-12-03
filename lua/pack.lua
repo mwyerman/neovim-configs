@@ -53,6 +53,13 @@ return require('packer').startup(function()
     use { 'kdheepak/lazygit.nvim' }
 
     use {
+	'numToStr/Comment.nvim',
+	config = function()
+	    require('plugins/comment')
+	end
+    }
+
+    use {
 	'lewis6991/gitsigns.nvim',
 	requires = {'nvim-lua/plenary.nvim'},
 	config = function()
