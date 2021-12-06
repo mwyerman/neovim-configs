@@ -16,6 +16,10 @@ o.sidescrolloff = 8
 o.ignorecase = true
 o.smartcase = true
 
+-- show hidden characters
+o.list = true
+o.listchars = "tab:◀■▶,trail:·,extends:◣,precedes:◢,nbsp:○"
+
 -- misc settings
 o.mouse = "a"
 o.cursorline = true
