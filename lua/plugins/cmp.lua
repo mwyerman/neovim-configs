@@ -42,7 +42,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 local lsp_servers = {
     'pylsp',
-    'pyright',
+    -- 'pyright',
     'clangd',
     'eslint',
 }
