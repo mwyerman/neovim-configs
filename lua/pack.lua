@@ -124,6 +124,13 @@ return require('packer').startup(function()
 
     use {
         'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('plugins/indentguides')
+        end
+    }
+
+    use {
+        'glepnir/dashboard-nvim',
     }
 
 end)
