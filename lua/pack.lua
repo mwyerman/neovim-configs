@@ -115,4 +115,11 @@ return require('packer').startup(function()
         end
     }
 
+    use {
+        'sidebar-nvim/sidebar.nvim',
+        config = function()
+            require('plugins/sidebar')
+        end
+    }
+
 end)
