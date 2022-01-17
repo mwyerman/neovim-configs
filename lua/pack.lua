@@ -130,6 +130,10 @@ return require('packer').startup(function()
     }
 
     use {
+        'haringsrob/nvim_context_vt',
+    }
+
+    use {
         'glepnir/dashboard-nvim',
     }
 
