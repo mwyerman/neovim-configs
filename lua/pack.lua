@@ -122,4 +122,8 @@ return require('packer').startup(function()
         end
     }
 
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+    }
+
 end)
