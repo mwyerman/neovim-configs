@@ -5,8 +5,9 @@ o.number = true
 o.relativenumber = true
 
 -- tab
+o.tabstop = 4
 o.shiftwidth = 4
-o.smarttab = true
+o.expandtab = true
 
 -- keep cursor near center of screen
 o.scrolloff = 8
