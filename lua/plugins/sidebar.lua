@@ -3,6 +3,7 @@ local sidebar = require('sidebar-nvim')
 local opts = {
     open = true,
     sections = {
+        'todos',
         'files',
         'git',
         'diagnostics',
