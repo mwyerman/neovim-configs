@@ -45,6 +45,7 @@ local lsp_servers = {
     'pyright',
     'clangd',
     'eslint',
+    'rls',
 }
 
 for _, lsp_server in ipairs(lsp_servers) do
