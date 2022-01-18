@@ -10,27 +10,27 @@ local luasnip = require('luasnip')
 
 cmp.setup{
     snippet = {
-	expand = function(args)
-	    luasnip.lsp_expand(args.body)
-	end,
-    },
-    mapping = {
-	['<C-k>'] = cmp.mapping.select_prev_item(),
-	['<C-j>'] = cmp.mapping.select_next_item(),
-	['<C-d>'] = cmp.mapping.scroll_docs(-4),
-	['<C-f>'] = cmp.mapping.scroll_docs(4),
-	['<C-Space>'] = cmp.mapping.complete(),
-	['<C-e>'] = cmp.mapping.close(),
-	['<Tab>'] = cmp.mapping.confirm {
-	    behavior = cmp.ConfirmBehavior.Replace,
-	    select = true,
-	},
-    },
-    sources = {
-	{ name = 'nvim_lsp' },
-	{ name = 'luasnip' },
-	{ name = 'buffer' },
-	{ name = 'path' },
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
+        },
+        mapping = {
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.close(),
+        ['<Tab>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+        },
+        sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'buffer' },
+        { name = 'path' },
     },
 }
 
@@ -42,7 +42,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 local lsp_servers = {
     'pylsp',
-    'pyright',
+    -- 'pyright',
     'clangd',
     'eslint',
     'rls',
@@ -50,6 +50,6 @@ local lsp_servers = {
 
 for _, lsp_server in ipairs(lsp_servers) do
     lsp[lsp_server].setup{
-	capabilies = capabilies,
+        capabilies = capabilies,
     }
 end

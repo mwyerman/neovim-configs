@@ -7,7 +7,7 @@ local lsp = require('lspconfig')
 lsp.pylsp.setup{}
 
 -- `npm i -g pyright`
-lsp.pyright.setup{}
+-- lsp.pyright.setup{}
 
 ------------------------------------------------------------
 -- c
