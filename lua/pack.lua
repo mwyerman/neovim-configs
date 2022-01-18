@@ -83,7 +83,7 @@ return require('packer').startup(function()
         end,
     }
 
-    use { 'tpope/vim-fugitive' }
+    -- use { 'tpope/vim-fugitive' }
 
     use {
         'f-person/git-blame.nvim',
