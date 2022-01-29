@@ -23,7 +23,7 @@ wk.register({
         d = { ":split<cr>", "split down" },
         n = { ":tabnew<cr>", "new tab" },
         Q = { ":tabclose<cr>", "close tab" },
-        O = { ":%bdelete|edit #|normal `\"", "close other buffers" },
+        O = { ':%bdelete|edit #|normal `"', "close other buffers" },
         P = { "tabonly", "close other tabs" },
     },
     t = {
@@ -62,7 +62,7 @@ wk.register({
         name = "git",
         s = { "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", "stage hunks" },
         r = { "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", "reset hunks" },
-    }
+    },
 }, {
     prefix = "<leader>",
     mode = "v",

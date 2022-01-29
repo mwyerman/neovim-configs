@@ -1,8 +1,8 @@
 -- Standard Neovim Settings
-require('settings')
+require("settings")
 
 -- Keybindings
-require('keybindings')
+require("keybindings")
 
 -- Packer (package manager)
-require('pack')
+require("pack")

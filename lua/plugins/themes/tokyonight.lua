@@ -1,5 +1,5 @@
-vim.cmd[[
+vim.cmd([[
     let g:tokyonight_style = "night"
 
     colorscheme tokyonight
-]]
+]])
