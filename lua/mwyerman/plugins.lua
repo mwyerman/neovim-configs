@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua" -- nvim tree
   use "akinsho/bufferline.nvim" -- buffer (tab) line
   use "moll/vim-bbye" -- buffer delete doesn't mess up windows
+  use "nvim-lualine/lualine.nvim" -- bottom status bar
 
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
