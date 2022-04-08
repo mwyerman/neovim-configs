@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim" -- buffer (tab) line
   use "moll/vim-bbye" -- buffer delete doesn't mess up windows
   use "nvim-lualine/lualine.nvim" -- bottom status bar
+  use "akinsho/toggleterm.nvim" -- toggleable terminal window
 
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
