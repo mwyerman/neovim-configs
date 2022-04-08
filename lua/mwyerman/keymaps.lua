@@ -16,7 +16,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- show file explorer on leader-e
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- resize windows with arrows
 keymap("n", "<C-Up>", ":resize +2<cr>", opts)
