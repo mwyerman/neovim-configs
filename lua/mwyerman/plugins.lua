@@ -56,6 +56,7 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim" -- speed optimization using caching
   use "lukas-reineke/indent-blankline.nvim" -- indentation guides
   use "goolord/alpha-nvim" -- start screen
+  use "folke/which-key.nvim"
 
 
   -- tokyo night colorscheme

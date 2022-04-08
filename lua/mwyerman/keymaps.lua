@@ -15,19 +15,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- show file explorer on leader-e
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
 -- resize windows with arrows
 keymap("n", "<C-Up>", ":resize +2<cr>", opts)
 keymap("n", "<C-Down>", ":resize -2<cr>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<cr>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<cr>", opts)
-
--- window handling
-keymap("n", "<leader>q", ":q<cr>", opts)
-keymap("n", "<leader>w", ":w<cr>", opts)
-keymap("n", "<leader>c", ":Bdelete<cr>", opts)
 
 
 -- navigate buffers
@@ -52,5 +44,3 @@ keymap("x", "J", ":move '>+1<cr>gv-gv", opts)
 keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
 keymap("x", "<C-j>", ":move '>+1<cr>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<cr>gv-gv", opts)
-
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts) -- TODO update telescope keybindings

@@ -26,6 +26,7 @@ local options = {
   fileencoding = "utf-8",
   pumheight = 10, -- popup menu height
   showtabline = 2, -- always show tab bar
+  timeoutlen = 100,
 
   splitbelow = true,
   splitright = true,
