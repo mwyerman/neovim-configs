@@ -33,7 +33,7 @@ local options = {
   termguicolors = true,
 
   undofile = true, -- persistent undo
-  updatetime = 300, -- faster completion
+  updatetime = 150, -- faster completion
   numberwidth = 4,
   signcolumn = "yes",
   guifont = "monospace:h17",
