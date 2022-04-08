@@ -75,6 +75,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable lsp
   use "williamboman/nvim-lsp-installer" -- lsp installer
   use "jose-elias-alvarez/null-ls.nvim" -- formatting and linting
+  use "antoinemadec/FixCursorHold.nvim" -- fixes lsp doc highlighting
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
