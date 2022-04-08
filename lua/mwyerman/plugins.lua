@@ -54,6 +54,7 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim" -- toggleable terminal window
   use "ahmedkhalf/project.nvim" -- project management
   use "lewis6991/impatient.nvim" -- speed optimization using caching
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
