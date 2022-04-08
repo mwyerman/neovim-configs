@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim" -- bottom status bar
   use "akinsho/toggleterm.nvim" -- toggleable terminal window
   use "ahmedkhalf/project.nvim" -- project management
+  use "lewis6991/impatient.nvim" -- speed optimization using caching
 
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
