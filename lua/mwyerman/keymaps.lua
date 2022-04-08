@@ -24,6 +24,12 @@ keymap("n", "<C-Down>", ":resize -2<cr>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<cr>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<cr>", opts)
 
+-- window handling
+keymap("n", "<leader>q", ":q<cr>", opts)
+keymap("n", "<leader>w", ":w<cr>", opts)
+keymap("n", "<leader>c", ":Bdelete<cr>", opts)
+
+
 -- navigate buffers
 keymap("n", "<S-l>", ":bnext<cr>", opts)
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
