@@ -48,6 +48,8 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- commenting support
   use "kyazdani42/nvim-web-devicons" -- icons
   use "kyazdani42/nvim-tree.lua" -- nvim tree
+  use "akinsho/bufferline.nvim" -- buffer (tab) line
+  use "moll/vim-bbye" -- buffer delete doesn't mess up windows
 
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
