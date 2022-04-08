@@ -7,6 +7,9 @@ configs.setup {
   ensure_installed = "maintained", -- one of "all", "maintained", or a list of languages
   sync_install = false, -- install languages syncronously
   ignore_install = { "" }, -- list of parsers to ignore installing
+  autopairs = {
+    enable = true,
+  },
   highlight = {
     enable = true,
     disable = { "" }, -- languages to disable
