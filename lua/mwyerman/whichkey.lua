@@ -196,6 +196,48 @@ local vmappings = {
   ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
 }
 
+local gnopts = {
+  mode = "n", -- NORMAL mode
+  prefix = "g",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+local gnmappings = {
+  D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+  d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+  i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+  r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+  l = { '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border = "rounded"})()<cr>', "Diagnostics" },
+  c = {
+    name = "Linewise comment",
+    c = {"<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Toggle comment"},
+    o = {"<cmd>lua require(\"Comment.api\").insert_linewise_below()<CR>", "Insert comment below"},
+    O = {"<cmd>lua require(\"Comment.api\").insert_linewise_above()<CR>", "Insert comment above"},
+    A = {"<cmd>lua require(\"Comment.api\").insert_linewise_eol()<CR>", "Insert comment at eol"},
+  },
+  b = {
+    name = "Blockwise comment",
+    c = {"<cmd>lua require(\"Comment.api\").toggle_current_blockwise()<CR>", "Toggle comment"},
+  },
+}
+
+local gvopts = {
+  mode = "v", -- VISUAL mode
+  prefix = "g",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+local gvmappings = {
+  c = {"<cmd>lua require(\"Comment.api\").toggle_linewise_op()<CR>", "Toggle linewise comment"},
+  b = {"<cmd>lua require(\"Comment.api\").toggle_blockwise_op()<CR>", "Toggle blockwise comment"},
+}
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
+which_key.register(gnmappings, gnopts)
+which_key.register(gvmappings, gvopts)
