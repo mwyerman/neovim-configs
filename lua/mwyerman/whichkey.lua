@@ -196,6 +196,23 @@ local vmappings = {
   ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
 }
 
+local gopts = {
+  mode = "n", -- VISUAL mode
+  prefix = "g",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+local gmappings = {
+  ["D"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+  ["d"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+  ["i"] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+  ["r"] = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+  ["l"] = { '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border = "rounded"})()<cr>', "Diagnostics" },
+}
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
+which_key.register(gmappings, gopts)
