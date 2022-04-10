@@ -1,39 +1,21 @@
-require('plugins')
-
-require('settings')
-require('keys/bindings')
-
-require('keys/which-key')
-
--- ui
-require('ui/lualine')
-require('ui/tabline')
-
--- themes
-require('ui/themes/aurora')
-
--- transparent background
-require('ui/transparency')
-
--------------------------------
--- Language Server Protocols
-
--- Python
-require'lspconfig'.pylsp.setup{}
-require'lspconfig'.pyright.setup{}
-
--- cmake
-require'lspconfig'.cmake.setup{}
-
--- clangd
--- require'lspconfig'.clangd.setup{}
-
--- compe autocomplete
-require('dev/compe')
-
--- telescope
-require('dev/telescope')
-
-require('dev/gitsigns')
-
-require('dev/format')
+require 'mwyerman.options'
+require 'mwyerman.keymaps'
+require 'mwyerman.plugins'
+require 'mwyerman.colorscheme'
+require 'mwyerman.cmp'
+require 'mwyerman.lsp'
+require 'mwyerman.telescope'
+require 'mwyerman.treesitter'
+require 'mwyerman.autopairs'
+require 'mwyerman.comment'
+require 'mwyerman.gitsigns'
+require 'mwyerman.nvim-tree'
+require 'mwyerman.bufferline'
+require 'mwyerman.lualine'
+require 'mwyerman.toggleterm'
+require 'mwyerman.project'
+require 'mwyerman.impatient'
+require 'mwyerman.indentline'
+require 'mwyerman.alpha'
+require 'mwyerman.whichkey'
+require 'mwyerman.autocommands'
