@@ -209,7 +209,7 @@ local gnmappings = {
   d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
   i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
   r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
-  l = { '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border = "rounded"})()<cr>', "Diagnostics" },
+  l = { '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>', "Diagnostics" },
   c = {
     name = "Linewise comment",
     c = {"<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Toggle comment"},
