@@ -223,21 +223,7 @@ local gnmappings = {
   },
 }
 
-local gvopts = {
-  mode = "v", -- VISUAL mode
-  prefix = "g",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
-local gvmappings = {
-  c = {"<cmd>lua require(\"Comment.api\").toggle_linewise_op()<CR>", "Toggle linewise comment"},
-  b = {"<cmd>lua require(\"Comment.api\").toggle_blockwise_op()<CR>", "Toggle blockwise comment"},
-}
-
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
 which_key.register(gnmappings, gnopts)
-which_key.register(gvmappings, gvopts)
