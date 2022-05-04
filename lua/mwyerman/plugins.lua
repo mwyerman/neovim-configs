@@ -57,6 +57,10 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- indentation guides
   use "goolord/alpha-nvim" -- start screen
   use "folke/which-key.nvim"
+  use {
+    "kkoomen/vim-doge",
+    run = ":call doge#install()",
+  } -- docstring generator
 
 
   -- tokyo night colorscheme
