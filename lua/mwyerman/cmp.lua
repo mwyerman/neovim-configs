@@ -118,7 +118,11 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = true, -- show docs without border. replace with commented lines below to show border
+  window = {
+    -- documentation = 'native'
+    documentation = cmp.config.window.bordered()
+  },
+  -- documentation = true, -- show docs without border. replace with commented lines below to show border
   --documentation = {
   --  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   --},
