@@ -3,6 +3,17 @@ if not status_ok then
   return
 end
 
+vim.cmd [[
+if has('win64') || has('win32') || has('win16')
+  set shell=powershell.exe
+  set shellxquote=
+  let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+  let &shellquote   = ''
+  let &shellpipe    = '| Out-File -Encoding UTF8 %s'
+  let &shellredir   = '| Out-File -Encoding UTF8 %s'
+endif
+]]
+
 toggleterm.setup({
   size = 20,
   open_mapping = [[<c-\>]],
