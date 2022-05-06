@@ -26,7 +26,7 @@ local options = {
   fileencoding = "utf-8",
   pumheight = 10, -- popup menu height
   showtabline = 2, -- always show tab bar
-  timeoutlen = 100,
+  timeoutlen = 50,
 
   splitbelow = true,
   splitright = true,
@@ -34,7 +34,7 @@ local options = {
   termguicolors = true,
 
   undofile = true, -- persistent undo
-  updatetime = 150, -- faster completion
+  updatetime = 50, -- faster completion
   numberwidth = 4,
   signcolumn = "yes",
   guifont = "monospace:h17",
