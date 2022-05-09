@@ -110,9 +110,11 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "buffer" },
     { name = "path" },
+    { name = "buffer" },
+    { name = "nvim_lsp_signature_help" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -122,10 +124,6 @@ cmp.setup {
     -- documentation = 'native'
     documentation = cmp.config.window.bordered()
   },
-  -- documentation = true, -- show docs without border. replace with commented lines below to show border
-  --documentation = {
-  --  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  --},
   experimental = {
     ghost_text = false,
     native_menu = false,
