@@ -62,6 +62,7 @@ return packer.startup(function(use)
     run = ":call doge#install()",
   } -- docstring generator
   use "karb94/neoscroll.nvim" -- smooth scrolling
+  use "simrat39/symbols-outline.nvim" -- symbols tree
 
 
   -- tokyo night colorscheme
