@@ -88,8 +88,6 @@ local mappings = {
   ["d"] = { "<cmd>DogeGenerate<cr>", "Generate Docstring" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
   ["E"] = { "<cmd>SymbolsOutline<cr>", "Symbols Explorer" },
-  ["w"] = { "<cmd>w<CR>", "Save" },
-  ["q"] = { "<cmd>q<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
@@ -98,6 +96,12 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+
+  w = {
+    name = "Window",
+    v = { "<cmd>vsplit<cr>", "Vertical Split"},
+    s = { "<cmd>split<cr>", "Horizontal Split"},
+  },
 
   p = {
     name = "Packer",
