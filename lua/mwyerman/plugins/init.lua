@@ -67,6 +67,9 @@ return packer.startup(function(use)
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
 
+  -- onenord colorscheme
+  use "rmehri01/onenord.nvim"
+
   -- cmp autocomplete
   use "hrsh7th/nvim-cmp" -- base plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
