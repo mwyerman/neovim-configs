@@ -61,6 +61,7 @@ return packer.startup(function(use)
     "kkoomen/vim-doge",
     run = ":call doge#install()",
   } -- docstring generator
+  use "karb94/neoscroll.nvim" -- smooth scrolling
 
 
   -- tokyo night colorscheme
