@@ -63,6 +63,7 @@ return packer.startup(function(use)
   } -- docstring generator
   use "karb94/neoscroll.nvim" -- smooth scrolling
   use "simrat39/symbols-outline.nvim" -- symbols tree
+  use "pianocomposer321/yabs.nvim" -- build configurations
 
 
   -- tokyo night colorscheme
