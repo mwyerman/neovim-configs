@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim" -- symbols tree
   use "pianocomposer321/yabs.nvim" -- build configurations
   use "aserowy/tmux.nvim" -- tmux
+  use "ggandor/leap.nvim" -- quick navigation
 
 
   -- tokyo night colorscheme
