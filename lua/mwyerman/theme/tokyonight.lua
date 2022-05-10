@@ -1,5 +1,7 @@
 _M = {}
 
+vim.o.termguicolors = true
+
 _M.init = function()
 	local colorscheme = "tokyonight"
 	vim.g.tokyonight_style = "night"

@@ -1,5 +1,7 @@
 local _M = {}
 
+vim.o.termguicolors = true
+
 _M.colors = {
 	bg = "#2e3440",
 	fg = "#ECEFF4",
