@@ -85,7 +85,7 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["d"] = { "<cmd>DogeGenerate<cr>", "Generate Docstring" },
+  ["d"] = { "<cmd>lua require('neogen').generate()<cr>", "Generate Docstring" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
   ["E"] = { "<cmd>SymbolsOutline<cr>", "Symbols Explorer" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },

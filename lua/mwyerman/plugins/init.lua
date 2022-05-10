@@ -57,15 +57,12 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- indentation guides
   use "goolord/alpha-nvim" -- start screen
   use "folke/which-key.nvim"
-  use {
-    "kkoomen/vim-doge",
-    run = ":call doge#install()",
-  } -- docstring generator
   use "karb94/neoscroll.nvim" -- smooth scrolling
   use "simrat39/symbols-outline.nvim" -- symbols tree
   use "pianocomposer321/yabs.nvim" -- build configurations
   use "aserowy/tmux.nvim" -- tmux
   use "ggandor/leap.nvim" -- quick navigation
+  use "danymat/neogen" -- docstring generator
 
 
   -- tokyo night colorscheme
