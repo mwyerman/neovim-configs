@@ -140,11 +140,11 @@ local mappings = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
+      "<cmd>Trouble workspace_diagnostics<cr>",
       "Document Diagnostics",
     },
     w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+      "<cmd>Trouble workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
@@ -159,7 +159,7 @@ local mappings = {
       "Prev Diagnostic",
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+    q = { "<cmd>Trouble<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
@@ -215,7 +215,7 @@ local gnmappings = {
   D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
   d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
   i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-  r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
   l = { '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>', "Diagnostics" },
   c = {
     name = "Linewise comment",

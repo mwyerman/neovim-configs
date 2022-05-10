@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use "aserowy/tmux.nvim" -- tmux
   use "ggandor/leap.nvim" -- quick navigation
   use "danymat/neogen" -- docstring generator
+  use "folke/trouble.nvim" -- nicer diagnostics/quickfix menu
 
 
   -- tokyo night colorscheme
