@@ -95,6 +95,7 @@ return packer.startup(function(use)
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
+  use "m-demare/hlargs.nvim" -- argument highlighting
 
   -- treesitter
   use {
