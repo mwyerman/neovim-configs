@@ -1,11 +1,20 @@
+M = {}
+
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
   return
 end
 
+local status_ok, lsp_installer_server = pcall(require, "nvim-lsp-installer.servers")
+if not status_ok then
+  return
+end
+
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
+-- lsp_installer.on_server_ready(function(server)
+local handle_server = function(server)
   local opts = {
     on_attach = require("mwyerman.lsp.handlers").on_attach,
     capabilities = require("mwyerman.lsp.handlers").capabilities,
@@ -29,4 +38,19 @@ lsp_installer.on_server_ready(function(server)
   -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   server:setup(opts)
-end)
+end
+-- end)
+
+
+function M.update_servers()
+  local installed_servers = lsp_installer_server.get_installed_servers()
+  for i = 1, #installed_servers do
+    local ok, error = pcall(handle_server, installed_servers[i])
+    if not ok then
+      vim.notify(tostring(error), vim.log.levels.ERROR)
+    end
+  end
+end
+
+
+return M

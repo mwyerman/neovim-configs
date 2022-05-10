@@ -166,6 +166,10 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    u = {
+      "<cmd>lua require('mwyerman.lsp.lsp-installer').update_servers()<cr>",
+      "Update LSP Servers"
+    }
   },
   s = {
     name = "Search",
