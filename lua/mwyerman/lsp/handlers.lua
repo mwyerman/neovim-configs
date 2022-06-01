@@ -60,6 +60,20 @@ local function lsp_highlight_document(client)
   end
 end
 
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local function lsp_enable_format_on_save(client, bufnr)
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.formatting_sync()
+      end,
+    })
+  end
+end
+
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -78,6 +92,7 @@ M.on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
+  lsp_enable_format_on_save(client, bufnr)
   --lsp_highlight_document(client)
 end
 
