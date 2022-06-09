@@ -71,6 +71,9 @@ return packer.startup(function(use)
 
   -- onenord colorscheme
   use "rmehri01/onenord.nvim"
+  
+  -- github colorscheme
+  use "projekt0n/github-nvim-theme"
 
   -- cmp autocomplete
   use "hrsh7th/nvim-cmp" -- base plugin

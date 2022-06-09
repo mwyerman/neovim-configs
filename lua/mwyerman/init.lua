@@ -2,7 +2,8 @@ require 'mwyerman.options'
 require 'mwyerman.keymaps'
 require 'mwyerman.plugins'
 
-require 'mwyerman.theme.onenord'.init()
+-- require 'mwyerman.theme.onenord'.init()
+require 'mwyerman.theme.github'
 
 require 'mwyerman.plugins.cmp'
 require 'mwyerman.lsp'
