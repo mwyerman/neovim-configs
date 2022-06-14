@@ -5,5 +5,4 @@ end
 
 githubtheme.setup({
   theme_style = "dark_default",
-  transparent = true
 })
