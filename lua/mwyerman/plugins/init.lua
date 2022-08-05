@@ -71,9 +71,12 @@ return packer.startup(function(use)
 
   -- onenord colorscheme
   use "rmehri01/onenord.nvim"
-  
+
   -- github colorscheme
   use "projekt0n/github-nvim-theme"
+
+  -- oxocarbon colorscheme
+  use "B4mbus/oxocarbon-lua.nvim"
 
   -- cmp autocomplete
   use "hrsh7th/nvim-cmp" -- base plugin
@@ -97,6 +100,14 @@ return packer.startup(function(use)
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
+  use {
+    "EthanJWright/vs-tasks.nvim",
+    requires = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  }
   use "m-demare/hlargs.nvim" -- argument highlighting
 
   -- treesitter
