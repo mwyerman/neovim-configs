@@ -96,12 +96,12 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
-  m = { "<cmd>Telescope yabs tasks<cr>", "yabs"},
+  m = { "<cmd>Telescope yabs tasks<cr>", "yabs" },
 
   w = {
     name = "Window",
-    v = { "<cmd>vsplit<cr>", "Vertical Split"},
-    s = { "<cmd>split<cr>", "Horizontal Split"},
+    v = { "<cmd>vsplit<cr>", "Vertical Split" },
+    s = { "<cmd>split<cr>", "Horizontal Split" },
   },
 
   p = {
@@ -150,22 +150,28 @@ local mappings = {
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
-    },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    -- j = {
+    --   "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+    --   "Next Diagnostic",
+    -- },
+    -- k = {
+    --   "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+    --   "Prev Diagnostic",
+    -- },
+    ["."] = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Next Diagnostic" },
+    [","] = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Prev Diagnostic" },
+    j = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Next Diagnostic" },
+    k = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Prev Diagnostic" },
+    -- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    l = { "<cmd>Lspsaga code_action<cr>", "CodeLens Action" },
     q = { "<cmd>Trouble<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    o = { "<cmd>LSoutlineToggle<cr>", "Toggle Symbols Outline" },
   },
   s = {
     name = "Search",
@@ -180,15 +186,20 @@ local mappings = {
   },
 
   t = {
-    name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    name = "Test",
+    p = { "<cmd>!tmux send -t 1 'env/bin/pytest %' Enter<cr><cr>", "test" },
   },
+  --[[ t = { ]]
+  --[[   name = "Terminal", ]]
+  --[[   n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" }, ]]
+  --[[   u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" }, ]]
+  --[[   t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" }, ]]
+  --[[   p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" }, ]]
+  --[[   f = { "<cmd>ToggleTerm direction=float<cr>", "Float" }, ]]
+  --[[   h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" }, ]]
+  --[[   v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" }, ]]
+  --[[ }, ]]
+  T = { "<cmd>lua require('telescope').extensions.vstask.tasks()<cr>", "Tasks" }
 }
 
 local vopts = {
@@ -212,22 +223,28 @@ local gnopts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 local gnmappings = {
-  D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
-  d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
-  i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  l = { '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>', "Diagnostics" },
-  c = {
-    name = "Linewise comment",
-    c = {"<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Toggle comment"},
-    o = {"<cmd>lua require(\"Comment.api\").insert_linewise_below()<CR>", "Insert comment below"},
-    O = {"<cmd>lua require(\"Comment.api\").insert_linewise_above()<CR>", "Insert comment above"},
-    A = {"<cmd>lua require(\"Comment.api\").insert_linewise_eol()<CR>", "Insert comment at eol"},
-  },
+  -- D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+  d = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
+  D = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
+  -- i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+  r = { "<cmd>Lspsaga lsp_finder<cr>", "References" },
+  l = { '<cmd>Lspsaga show_line_diagnostics<cr>', "Diagnostics" },
+  L = { '<cmd>Lspsaga show_cursor_diagnostics<cr>', "Diagnostics" },
+  --[[ c = { ]]
+  --[[   name = "Linewise comment", ]]
+  --[[   c = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Toggle comment" }, ]]
+  --[[   o = { "<cmd>lua require(\"Comment.api\").insert_linewise_below()<CR>", "Insert comment below" }, ]]
+  --[[   O = { "<cmd>lua require(\"Comment.api\").insert_linewise_above()<CR>", "Insert comment above" }, ]]
+  --[[   A = { "<cmd>lua require(\"Comment.api\").insert_linewise_eol()<CR>", "Insert comment at eol" }, ]]
+  --[[ }, ]]
   b = {
     name = "Blockwise comment",
-    c = {"<cmd>lua require(\"Comment.api\").toggle_current_blockwise()<CR>", "Toggle comment"},
+    c = { "<cmd>lua require(\"Comment.api\").toggle_current_blockwise()<CR>", "Toggle comment" },
   },
+  ["."] = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Next Diagnostic" },
+  [","] = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Prev Diagnostic" },
+  j = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Next Diagnostic" },
+  k = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Prev Diagnostic" },
 }
 
 which_key.setup(setup)

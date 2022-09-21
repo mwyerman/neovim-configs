@@ -62,8 +62,12 @@ return packer.startup(function(use)
   use "pianocomposer321/yabs.nvim" -- build configurations
   use "aserowy/tmux.nvim" -- tmux
   use "ggandor/leap.nvim" -- quick navigation
+  use "phaazon/hop.nvim" -- quick navigation
   use "danymat/neogen" -- docstring generator
   use "folke/trouble.nvim" -- nicer diagnostics/quickfix menu
+
+  -- testing copilot
+  use 'github/copilot.vim'
 
 
   -- tokyo night colorscheme
@@ -97,6 +101,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- lsp installer
   use "jose-elias-alvarez/null-ls.nvim" -- formatting and linting
   use "antoinemadec/FixCursorHold.nvim" -- fixes lsp doc highlighting
+  use "glepnir/lspsaga.nvim" -- LSP Saga interface
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
@@ -117,8 +122,20 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring" -- comment.nvim treesitter support
 
+  -- window resizing
+  use {
+    "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim",
+    },
+  }
+
   -- git
   use "lewis6991/gitsigns.nvim"
+
+  -- tint inactive buffers
+  use "sunjon/shade.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

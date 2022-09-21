@@ -32,7 +32,7 @@ leap.setup {
 -- window as the only element:
 function Leap_Bidirectional()
   leap.leap {
-    ['target-windows'] = { vim.fn.getwininfo(vim.fn.win_getid())[1] }
+    ['target-windows'] = { vim.api.nvim_get_current_win() }
   }
 end
 

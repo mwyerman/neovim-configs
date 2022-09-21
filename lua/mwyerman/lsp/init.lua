@@ -6,3 +6,4 @@ end
 require("mwyerman.lsp.lsp-installer")
 require("mwyerman.lsp.handlers").setup()
 require("mwyerman.lsp.null-ls")
+require("mwyerman.lsp.lsp-saga")
