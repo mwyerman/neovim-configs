@@ -97,9 +97,14 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- additional snippets
 
   -- lsp
-  use "neovim/nvim-lspconfig" -- enable lsp
-  use "williamboman/nvim-lsp-installer" -- lsp installer
-  use "jose-elias-alvarez/null-ls.nvim" -- formatting and linting
+  use {
+    "williamboman/mason.nvim",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+      "jose-elias-alvarez/null-ls",
+    }
+  }
   use "antoinemadec/FixCursorHold.nvim" -- fixes lsp doc highlighting
   use "glepnir/lspsaga.nvim" -- LSP Saga interface
 

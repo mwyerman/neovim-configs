@@ -86,7 +86,7 @@ local mappings = {
     "Buffers",
   },
   ["d"] = { "<cmd>lua require('neogen').generate()<cr>", "Generate Docstring" },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
+  --[[ ["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" }, ]]
   ["E"] = { "<cmd>SymbolsOutline<cr>", "Symbols Explorer" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },

@@ -6,7 +6,7 @@ end
 configs.setup {
   ensure_installed = { "bash", "c", "cpp", "css", "dockerfile", "go", "html", "java", "javascript", "jsdoc", "json",
     "json5", "latex", "llvm", "lua", "make", "python", "rust", "typescript", "verilog", "vim" },
-  sync_install = false, -- install languages syncronously
+  sync_install = true, -- install languages syncronously
   ignore_install = { "" }, -- list of parsers to ignore installing
   autopairs = {
     enable = true,
