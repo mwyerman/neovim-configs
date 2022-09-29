@@ -46,7 +46,6 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     mappings = {
@@ -102,4 +101,4 @@ nvim_tree.setup {
   },
 }
 
-vim.api.nvim_buf_set_keymap("n", "<leader>F", ":NvimTreeToggle<cr>", {noremap=true, silent=true, desc="File Explorer"})
+vim.api.nvim_set_keymap("n", "<leader>F", ":NvimTreeToggle<cr>", {noremap=true, silent=true, desc="File Explorer"})
