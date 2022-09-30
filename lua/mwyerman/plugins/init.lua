@@ -102,7 +102,7 @@ return packer.startup(function(use)
     requires = {
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
-      "jose-elias-alvarez/null-ls",
+      "jose-elias-alvarez/null-ls.nvim",
     }
   }
   use "antoinemadec/FixCursorHold.nvim" -- fixes lsp doc highlighting

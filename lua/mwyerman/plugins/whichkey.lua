@@ -224,8 +224,8 @@ local gnopts = {
 }
 local gnmappings = {
   -- D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
-  d = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
-  D = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
+  --[[ d = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" }, ]]
+  d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
   -- i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
   r = { "<cmd>Lspsaga lsp_finder<cr>", "References" },
   l = { '<cmd>Lspsaga show_line_diagnostics<cr>', "Diagnostics" },

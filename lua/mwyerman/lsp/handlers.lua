@@ -60,19 +60,21 @@ local function lsp_highlight_document(client)
   end
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local function lsp_enable_format_on_save(client, bufnr)
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.formatting_sync()
-      end,
-    })
-  end
-end
+--[[ local augroup = vim.api.nvim_create_augroup("LspFormatting", {}) ]]
+--[[ local function lsp_enable_format_on_save(client, bufnr) ]]
+--[[   if client.supports_method("textDocument/formatting") then ]]
+--[[     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr }) ]]
+--[[     vim.api.nvim_create_autocmd("BufWritePre", { ]]
+--[[       group = augroup, ]]
+--[[       buffer = bufnr, ]]
+--[[       callback = function() ]]
+--[[         vim.lsp.buf.formatting_sync() ]]
+--[[       end, ]]
+--[[     }) ]]
+--[[   end ]]
+--[[ end ]]
+
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
 local function lsp_keymaps(bufnr)
   local function opts(desc)
@@ -82,13 +84,16 @@ local function lsp_keymaps(bufnr)
       desc = desc,
     }
   end
+
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts("Signature"))
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<S-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts("Signature Help"))
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts("Next Diag"))
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts("Prev Diag"))
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>',
+    opts("Next Diag"))
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>',
+    opts("Prev Diag"))
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
@@ -98,7 +103,7 @@ M.on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
-  lsp_enable_format_on_save(client, bufnr)
+  --[[ lsp_enable_format_on_save(client, bufnr) ]]
   --lsp_highlight_document(client)
 end
 
