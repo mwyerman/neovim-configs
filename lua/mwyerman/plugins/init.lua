@@ -123,7 +123,7 @@ return packer.startup(function(use)
   -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    run = ":TSUpdate", -- update treesitter automatically
   }
   use "JoosepAlviste/nvim-ts-context-commentstring" -- comment.nvim treesitter support
 
