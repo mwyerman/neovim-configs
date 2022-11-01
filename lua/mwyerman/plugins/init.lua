@@ -138,9 +138,10 @@ return packer.startup(function(use)
 
   -- git
   use "lewis6991/gitsigns.nvim"
+  use "TimUntersberger/neogit"
 
   -- tint inactive buffers
-  use "sunjon/shade.nvim"
+  --[[ use "sunjon/shade.nvim" ]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

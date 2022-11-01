@@ -12,7 +12,7 @@ configs.setup {
     enable = true,
   },
   highlight = {
-    enable = true,
+    enable = false,
     disable = { "" }, -- languages to disable
     additional_vim_regex_highlighting = true,
   },
