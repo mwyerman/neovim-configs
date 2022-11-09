@@ -107,9 +107,13 @@ return packer.startup(function(use)
   }
   use "antoinemadec/FixCursorHold.nvim" -- fixes lsp doc highlighting
   use "glepnir/lspsaga.nvim" -- LSP Saga interface
+  use "lspcontainers/lspcontainers.nvim" -- LSP containers
+
+  use "MunifTanjim/exrc.nvim" -- local configs
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
   use {
     "EthanJWright/vs-tasks.nvim",
     requires = {

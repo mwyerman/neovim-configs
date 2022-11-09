@@ -3,9 +3,10 @@ require 'mwyerman.keymaps'
 require 'mwyerman.plugins'
 
 -- require 'mwyerman.theme.onenord'.init()
--- require 'mwyerman.theme.github'
-require 'mwyerman.theme.oxocarbon'.init()
+require 'mwyerman.theme.github'
+-- require 'mwyerman.theme.oxocarbon'.init()
 
+require 'mwyerman.plugins.exrc'
 require 'mwyerman.plugins.cmp'
 require 'mwyerman.lsp'
 require 'mwyerman.plugins.telescope'
