@@ -10,9 +10,9 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup {
   debug = false,
-  on_init = function(client, _)
-    client.offset_encoding = "utf-8"
-  end,
+  --[[ on_init = function(client, _) ]]
+  --[[   client.offset_encoding = "utf-8" ]]
+  --[[ end, ]]
   sources = {
     formatting.prettier.with { extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },
     --[[ formatting.black, ]]

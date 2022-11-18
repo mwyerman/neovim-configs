@@ -28,11 +28,13 @@ require 'mwyerman.plugins.neoscroll'
 require 'mwyerman.plugins.yabs'
 require 'mwyerman.plugins.tmux'
 require 'mwyerman.plugins.hlargs'
---[[ require 'mwyerman.plugins.leap' ]]
 require 'mwyerman.plugins.hop'
 require 'mwyerman.plugins.neogen'
 require 'mwyerman.plugins.copilot'
 require 'mwyerman.plugins.windows'
+
+require 'mwyerman.plugins.diffview'
+require 'mwyerman.plugins.neogit'
 
 -- keep this last to ensure all colors work right
 require 'mwyerman.plugins.shade'

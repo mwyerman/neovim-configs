@@ -14,7 +14,7 @@ configs.setup {
   highlight = {
     enable = false,
     disable = { "" }, -- languages to disable
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = false,
   },
   indent = { enable = true, disable = { "yaml", "python" } },
   context_commentstring = {
