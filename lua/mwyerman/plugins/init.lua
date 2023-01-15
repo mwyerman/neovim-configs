@@ -73,6 +73,9 @@ return packer.startup(function(use)
   -- tokyo night colorscheme
   use "folke/tokyonight.nvim"
 
+  -- catppuccin colorscheme
+  use {"catppuccin/nvim", as = "catppuccin"}
+
   -- onenord colorscheme
   use "rmehri01/onenord.nvim"
 

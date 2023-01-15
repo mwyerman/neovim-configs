@@ -3,7 +3,8 @@ require 'mwyerman.keymaps'
 require 'mwyerman.plugins'
 
 -- require 'mwyerman.theme.onenord'.init()
-require 'mwyerman.theme.github'
+--[[ require 'mwyerman.theme.github' ]]
+require 'mwyerman.theme.catppuccin'.init()
 -- require 'mwyerman.theme.oxocarbon'.init()
 
 require 'mwyerman.plugins.exrc'
