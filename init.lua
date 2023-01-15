@@ -17,12 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
--- require 'theme.onenord'.init()
---[[ require 'theme.github' ]]
--- require 'theme.catppuccin'.init()
--- require 'theme.oxocarbon'.init()
-
--- set colorscheme to catppuccin
 vim.cmd("colorscheme catppuccin")
 
 require 'lsp'

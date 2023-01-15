@@ -1,5 +1,12 @@
 return {
   "akinsho/toggleterm.nvim",
+  keys = {
+    {"<c-\\>"},
+    {"<leader>Tn", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "node.js"},
+    {"<leader>Tu", "<cmd>lua _NCDU_TOGGLE()<cr>", desc = "ncdu"},
+    {"<leader>Tt", "<cmd>lua _HTOP_TOGGLE()<cr>", desc = "htop"},
+    {"<leader>Tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", desc = "python"},
+  },
   config = function()
     vim.cmd [[
     if has('win64') || has('win32') || has('win16')

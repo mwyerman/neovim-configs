@@ -1,12 +1,15 @@
 return {
   "pianocomposer321/yabs.nvim",
+  keys = {
+    { "<leader>m", "<cmd>Telescope yabs tasks<cr>", mode = "n", desc = "yabs"},
+  },
   dependencies = {
     "nvim-telescope/telescope.nvim",
   },
   config = function()
     local cond = require("yabs.conditions")
 
-    require("yabs"):setup({
+    require("yabs").setup({
       languages = { -- List of languages in vim's `filetype` format
         lua = {
           tasks = {
@@ -50,7 +53,6 @@ return {
         },
       },
     })
-
 
     require("telescope").load_extension('yabs')
   end

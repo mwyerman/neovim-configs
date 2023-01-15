@@ -1,6 +1,9 @@
 return {
   "danymat/neogen",
-  config = {
+  keys = {
+    { "<leader>d", "<cmd>lua require('neogen').generate()<CR>", mode = "n", desc = "generate docstring" },
+  },
+  opts = {
     enabled = true,
     input_after_comment = true,
     languages = {

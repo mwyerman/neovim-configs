@@ -3,6 +3,21 @@ return {
   dependencies = {
     "nvim-telescope/telescope-ui-select.nvim",
   },
+  keys = {
+    {"<leader>b", ":Telescope buffers<cr>", desc = "buffers"},
+    {"<leader>f", ":Telescope find_files<cr>", desc = "files"},
+    {"<leader>F", ":Telescope live_grep<cr>", desc = "grep"},
+    {"<leader>P", ":Telescope projects<cr>", desc = "projects"},
+    {"<leader>go", ":Telescope git_status<cr>", desc = "modified files"},
+    {"<leader>gb", ":Telescope git_branches<cr>", desc = "branches"},
+    {"<leader>gc", ":Telescope git_commits<cr>", desc = "commits"},
+    {"<leader>ls", ":Telescope lsp_document_symbols<cr>", desc = "document symbols"},
+    {"<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>", desc = "workspace symbols"},
+    {"<leader>sc", ":Telescope colorscheme<cr>", desc = "colorschemes"},
+    {"<leader>sh", ":Telescope help_tags<cr>", desc = "help tags"},
+    {"<leader>sk", ":Telescope keymaps<cr>", desc = "keymaps"},
+    {"<leader>sC", ":Telescope commands<cr>", desc = "commands"},
+  },
   config = function()
     local actions = require("telescope.actions")
 

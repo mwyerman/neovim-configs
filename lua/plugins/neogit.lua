@@ -1,6 +1,9 @@
 return {
   "TimUntersberger/neogit",
-  config = {
+  keys = {
+    {"<leader>gg", ":Neogit<CR>", mode = "n", desc = "neogit"},
+  },
+  opts = {
     disable_signs = false,
     disable_hint = false,
     disable_context_highlighting = true,
