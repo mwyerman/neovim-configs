@@ -23,18 +23,18 @@ mason_lsp.setup_handlers({
   -- Targeted overrides
   ["pylsp"] = function()
     lspconfig["pylsp"].setup(
-      require("mwyerman.lsp.settings.pylsp")
+      require("lsp.settings.pylsp")
     )
   end,
   ["sumneko_lua"] = function()
     lspconfig["sumneko_lua"].setup(
-      require("mwyerman.lsp.settings.sumneko_lua")
+      require("lsp.settings.sumneko_lua")
     )
   end,
   -- Clangd
   ["clangd"] = function()
     lspconfig["clangd"].setup(
-      require("mwyerman.lsp.settings.clangd")
+      require("lsp.settings.clangd")
     )
   end,
 
