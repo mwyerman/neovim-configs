@@ -1,5 +1,9 @@
 return {
   "goolord/alpha-nvim",
+  keys = {
+    { "<leader>a", "<cmd>Alpha<cr>", desc = "alpha" },
+  },
+  lazy = false,
   config = function()
     local dashboard = require("alpha.themes.dashboard")
     dashboard.section.header.val = {
@@ -11,14 +15,14 @@ return {
       [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
     }
     dashboard.section.buttons.val = {
-      dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-      dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-      dashboard.button("g", "  Git", ":Neogit <CR>"),
-      dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-      dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-      dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-      dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+      dashboard.button("f", "  find file", ":Telescope find_files <CR>"),
+      dashboard.button("F", "  find text", ":Telescope live_grep <CR>"),
+      dashboard.button("e", "  new file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("p", "  find project", ":Telescope projects <CR>"),
+      dashboard.button("g", "  git", ":Neogit <CR>"),
+      dashboard.button("r", "  recently used files", ":Telescope oldfiles <CR>"),
+      dashboard.button("c", "  configuration", ":e ~/.config/nvim/init.lua <CR>"),
+      dashboard.button("q", "  quit neovim", ":qa<CR>"),
     }
 
     local function footer()

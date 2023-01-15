@@ -1,5 +1,11 @@
 return {
   "ahmedkhalf/project.nvim",
+  keys = {
+    {"<leader>P", ":Telescope projects<cr>", desc = "projects"},
+  },
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
   config = function()
     require("project_nvim").setup({
       ---@usage set to false to disable project.nvim.
@@ -39,11 +45,6 @@ return {
       datapath = vim.fn.stdpath("data"),
     })
 
-    local tele_status_ok, telescope = pcall(require, "telescope")
-    if not tele_status_ok then
-      return
-    end
-
-    telescope.load_extension('projects')
+    require("telescope").load_extension('projects')
   end
 }

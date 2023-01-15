@@ -2,6 +2,7 @@ return {
   "echasnovski/mini.nvim",
   config = function()
     require("mini.animate").setup()
+    require("mini.bufremove").setup()
     require("mini.comment").setup()
     require("mini.indentscope").setup()
     require("mini.jump").setup()
