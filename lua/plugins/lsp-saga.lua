@@ -23,15 +23,22 @@ return {
     { "K", "<cmd>Lspsaga hover_doc<cr>" }
   },
   event = "BufRead",
-  opts = {
-    preview = {
-      lines_above = 0,
-      lines_below = 10,
-    },
-    scroll_preview = {
-      scroll_down = "<C-j>",
-      scroll_up = "<C-k>",
-    },
-    request_timeout = 2000,
-  },
+  config = function()
+    local catppuccin = require("catppuccin.groups.integrations.lsp_saga")
+    require("lspsaga").setup({
+      preview = {
+        lines_above = 0,
+        lines_below = 10,
+      },
+      scroll_preview = {
+        scroll_down = "<C-j>",
+        scroll_up = "<C-k>",
+      },
+      request_timeout = 2000,
+      ui = {
+        colors = catppuccin.custom_colors(),
+        kind = catppuccin.custom_kind(),
+      }
+    })
+  end
 }

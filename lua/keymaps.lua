@@ -31,16 +31,5 @@ keymap("n", "<S-h>", ":bprevious<cr>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- move text up and down
-keymap("v", "<C-j>", ":m .+1<cr>==", opts)
-keymap("v", "<C-k>", ":m .-2<cr>==", opts)
-
 -- paste without clearing register
 keymap("v", "P", '"_dP', opts)
-
--- Visual Block Mode
--- move text up and down
-keymap("x", "J", ":move '>+1<cr>gv-gv", opts)
-keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
-keymap("x", "<C-j>", ":move '>+1<cr>gv-gv", opts)
-keymap("x", "<C-k>", ":move '<-2<cr>gv-gv", opts)

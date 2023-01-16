@@ -1,6 +1,5 @@
 return {
   "folke/which-key.nvim",
-  keys = { "<leader>" },
   config = function()
     local opts = {
       mode = "n", -- NORMAL mode

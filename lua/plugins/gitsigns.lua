@@ -4,12 +4,8 @@ return {
     { "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", desc = "next hunk" },
     { "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", desc = "prev hunk" },
     { "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", desc = "blame" },
-    { "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", desc = "preview hunk" },
-    { "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", desc = "reset hunk" },
-    { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "reset buffer" },
     { "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", desc = "stage hunk" },
     { "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "undo stage hunk" },
-    { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "diff" },
   },
   lazy = false,
   opts = {
