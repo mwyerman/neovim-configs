@@ -1,0 +1,56 @@
+return {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+    },
+    config = function()
+        local builtin = require("telescope.builtin")
+        vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
+        vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "live grep" })
+        vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "grep string" })
+        vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "find buffers" })
+        vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "find help tags" })
+        vim.keymap.set("n", "<leader>f ", builtin.resume, { desc = "resume search" })
+
+        local actions = require("telescope.actions")
+        local telescope = require("telescope")
+
+        telescope.setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-k>"] = actions.move_selection_previous,
+                        ["<C-j>"] = actions.move_selection_next,
+                        ["<cr>"] = actions.select_default,
+                        ["<esc>"] = actions.close,
+                    }
+                },
+                pickers = {
+                    buffers = {
+                        mappings = {
+                            i = {
+                                ["<C-d>"] = actions.delete_buffer,
+                            }
+                        }
+                    }
+                },
+                extensions = {
+                    fzf = {
+                        fuzzy = true,
+                        override_generic_sorter = true,
+                        override_file_sorter = true,
+                        case_mode = "smart_case",
+                    }
+                }
+            }
+        })
+
+        local fzf_ok, _ = pcall(require, 'fzf_lib')
+        if fzf_ok then
+            telescope.load_extension("fzf")
+        else
+            print("Warning: fzf not properly installed; using default telescope sorters")
+        end
+    end
+}
