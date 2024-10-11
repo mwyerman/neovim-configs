@@ -11,7 +11,7 @@ M.setup = function()
     vim.opt.scrolloff = 5 -- keep cursor 10 lines away from edge of screen
     vim.opt.sidescrolloff = 10 -- keep cursor 10 cols away from edge of screen
     vim.opt.cmdheight = 0 -- hide command line when not in use
-    vim.opt.wrap = true -- no word wrap
+    vim.opt.wrap = false -- no word wrap
 
     --- whitespace chars
     vim.opt.list = true -- enable listchars
@@ -39,8 +39,6 @@ M.setup = function()
     --- search
     vim.o.ignorecase = true -- ignore case on search
     vim.opt.incsearch = true -- show substitution preview in buffer
-
-    vim.opt.clipboard:append("unnamedplus") -- all yanks onto clipboard
 
     --- undo history (reserve undos after neovim closes)
     local undo_dir = vim.fn.stdpath('cache') .. "/undo/" -- undo dir path
