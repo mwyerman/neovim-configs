@@ -13,7 +13,7 @@ return {
         vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "grep string" })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "find buffers" })
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "find help tags" })
-        vim.keymap.set("n", "<leader>fp", "<cmd>Telescope project<cr>", { desc = "find help tags" })
+        vim.keymap.set("n", "<leader>fp", "<cmd>Telescope project<cr>", { desc = "open project" })
         vim.keymap.set("n", "<leader>f ", builtin.resume, { desc = "resume search" })
 
         local actions = require("telescope.actions")
