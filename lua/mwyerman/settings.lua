@@ -32,6 +32,7 @@ M.setup = function()
     --- tabs
     vim.opt.autoindent = true -- indent automatically
     vim.opt.expandtab = true -- follow the file convention for tab width
+    vim.opt.smarttab = true -- smart tabs
     vim.opt.tabstop = 4 -- tab is 4 chars
     vim.opt.shiftwidth = 4 -- indents should be 4 chars
     vim.opt.softtabstop = 4 -- tabs are 4 chars

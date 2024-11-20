@@ -3,6 +3,10 @@ local M = {}
 
 
 M.setup = function()
+    if vim.loop.os_uname().sysname == "Windows_NT" then
+        vim.o.shell = "pwsh.exe"
+    end
+
     --- enter terminal mode automatically
     vim.api.nvim_create_autocmd({"WinEnter", "BufWinEnter"}, {
         pattern = "term://*",

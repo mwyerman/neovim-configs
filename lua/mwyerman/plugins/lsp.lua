@@ -25,6 +25,7 @@ return {
         "j-hui/fidget.nvim",
     },
 
+
     config = function()
         --- attach keymaps
         vim.api.nvim_create_autocmd("LspAttach", {
