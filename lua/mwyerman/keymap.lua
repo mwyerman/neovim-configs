@@ -16,7 +16,7 @@ M.setup = function()
     end
 
     --- netrw
-    bindn("<Leader>e", vim.cmd.Ex, "netrw")
+    -- bindn("<Leader>e", vim.cmd.Ex, "netrw")
 
     --- terminal
     bindn("<leader>tt", term.new_term, "terminal")
