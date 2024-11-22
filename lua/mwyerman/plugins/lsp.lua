@@ -7,6 +7,8 @@ local function create_lsp_keymaps(event)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "references", buffer = event.buf })
     vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, { desc = "signature help", buffer = event.buf })
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "diagnostics", buffer = event.buf })
+    vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "code actions", buffer = event.buf })
+    vim.keymap.set("v", "ga", vim.lsp.buf.code_action, { desc = "code actions", buffer = event.buf })
     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "rename", buffer = event.buf })
     vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "format", buffer = event.buf })
     vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "code actions", buffer = event.buf })
@@ -30,7 +32,15 @@ return {
         --- attach keymaps
         vim.api.nvim_create_autocmd("LspAttach", {
             desc = "LSP Keymaps",
-            callback = create_lsp_keymaps,
+            callback = function(args)
+                create_lsp_keymaps(args)
+
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                if client.server_capabilities.inlayHintProvider then
+                    vim.lsp.inlay_hint.enable(true)
+                end
+            end,
+
         })
 
         local cmp = require('cmp')
@@ -55,7 +65,21 @@ return {
                         capabilities = capabilities
                     }
                 end,
-
+                rust_analyzer = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.rust_analyzer.setup({
+                        settings = {
+                            ["rust-analyzer"] = {
+                                cargo = {
+                                    features = "all"
+                                },
+                                inlayHints = {
+                                    enable = true
+                                }
+                            }
+                        }
+                    })
+                end,
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
