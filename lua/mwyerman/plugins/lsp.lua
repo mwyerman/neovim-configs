@@ -81,7 +81,6 @@ return {
                 "yamlls",
                 "cmake",
                 "dockerls",
-                "checkmake",
                 "bashls",
                 "powershell_es",
             },
