@@ -8,7 +8,7 @@ M.setup = function()
     vim.g.maplocalleader = " "
 
     local function bindn(lhs, rhs, desc)
-        vim.keymap.set("n", lhs, rhs, {["desc"]=desc})
+        vim.keymap.set("n", lhs, rhs, { ["desc"] = desc })
     end
 
     local function bindv(lhs, rhs)

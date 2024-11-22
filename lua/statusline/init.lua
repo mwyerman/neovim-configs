@@ -55,9 +55,14 @@ local function get_git()
         return ""
     end
 
-    local added = gitinfo.added and ("%#GitSignsAdd#+" .. gitinfo.added .. " ") or ""
-    local changed = gitinfo.changed and ("%#GitSignsChange#~" .. gitinfo.changed .. " ") or ""
-    local removed = gitinfo.removed and ("%#GitSignsDelete#-" .. gitinfo.removed .. " ") or ""
+    local added = gitinfo.added and ("%#GitSignsAdd#+" .. gitinfo.added .. " ")
+        or ""
+    local changed = gitinfo.changed
+            and ("%#GitSignsChange#~" .. gitinfo.changed .. " ")
+        or ""
+    local removed = gitinfo.removed
+            and ("%#GitSignsDelete#-" .. gitinfo.removed .. " ")
+        or ""
     if gitinfo.added == 0 then
         added = ""
     end
@@ -106,7 +111,12 @@ M.setup = function()
     local augroup = vim.api.nvim_create_augroup("statusline", { clear = true })
 
     local active_redraw_events = {
-        "WinEnter", "BufEnter", "BufWritePost", "FileChangedShellPost", "FileType", "ModeChanged",
+        "WinEnter",
+        "BufEnter",
+        "BufWritePost",
+        "FileChangedShellPost",
+        "FileType",
+        "ModeChanged",
     }
 
     vim.api.nvim_create_autocmd(active_redraw_events, {
@@ -114,16 +124,17 @@ M.setup = function()
         group = augroup,
         callback = function()
             vim.opt.statusline = M.active()
-        end
+        end,
     })
     vim.api.nvim_create_autocmd({
-        "WinLeave", "BufLeave"
+        "WinLeave",
+        "BufLeave",
     }, {
         pattern = "*",
         group = augroup,
         callback = function()
             vim.opt_local.statusline = M.inactive()
-        end
+        end,
     })
 end
 

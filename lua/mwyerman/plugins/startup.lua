@@ -1,5 +1,5 @@
 return {
-    'goolord/alpha-nvim',
+    "goolord/alpha-nvim",
     config = function()
         -- require('alpha').setup(require('alpha.themes.dashboard').config)
         local alpha = require("alpha")
@@ -19,5 +19,5 @@ return {
             dashboard.button("q", "quit", ":qa<cr>"),
         }
         alpha.setup(dashboard.opts)
-    end
-};
+    end,
+}

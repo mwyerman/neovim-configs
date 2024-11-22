@@ -1,7 +1,7 @@
 return {
     "folke/which-key.nvim",
     dependencies = {
-        "nvim-tree/nvim-web-devicons"
+        "nvim-tree/nvim-web-devicons",
     },
     event = "VeryLazy",
     opts = {},
@@ -11,8 +11,8 @@ return {
             function()
                 require("which-key").show()
             end,
-            desc = "show keybindings"
-        }
+            desc = "show keybindings",
+        },
     },
     config = function()
         local wk = require("which-key")
@@ -21,5 +21,5 @@ return {
             { "<leader>l", group = "lsp" },
             { "<leader>f", group = "find" },
         })
-    end
+    end,
 }

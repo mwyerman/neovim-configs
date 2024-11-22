@@ -1,4 +1,14 @@
+local lsp_formatting = function(bufnr)
+    vim.lsp.buf.format({
+        filter = function(client)
+            return true
+        end,
+        bufnr = bufnr,
+    })
+end
+
 local function create_lsp_keymaps(event)
+    -- stylua: ignore start
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hover", buffer = event.buf })
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "definition", buffer = event.buf })
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "declaration", buffer = event.buf })
@@ -10,9 +20,10 @@ local function create_lsp_keymaps(event)
     vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "code actions", buffer = event.buf })
     vim.keymap.set("v", "ga", vim.lsp.buf.code_action, { desc = "code actions", buffer = event.buf })
     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "rename", buffer = event.buf })
-    vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "format", buffer = event.buf })
+    vim.keymap.set("n", "<leader>lf", lsp_formatting, { desc = "format", buffer = event.buf })
     vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "code actions", buffer = event.buf })
     vim.keymap.set("n", "<leader>lR", "<cmd>LspRestart<cr>", { desc = "restart lsp", buffer = event.buf })
+    -- stylua: ignore end
 end
 
 return {
@@ -27,7 +38,6 @@ return {
         "j-hui/fidget.nvim",
     },
 
-
     config = function()
         --- attach keymaps
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -36,34 +46,37 @@ return {
                 create_lsp_keymaps(args)
 
                 local client = vim.lsp.get_client_by_id(args.data.client_id)
-                if client.server_capabilities.inlayHintProvider then
+                if
+                    client.server_capabilities.inlayHintProvider
+                    and not vim.lsp.inlay_hint.is_enabled()
+                then
                     vim.lsp.inlay_hint.enable(true)
                 end
             end,
-
         })
 
-        local cmp = require('cmp')
+        local cmp = require("cmp")
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+            cmp_lsp.default_capabilities()
+        )
 
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "stylua",
                 "rust_analyzer",
-                "pyright",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
+                    require("lspconfig")[server_name].setup({
+                        capabilities = capabilities,
+                    })
                 end,
                 rust_analyzer = function()
                     local lspconfig = require("lspconfig")
@@ -71,62 +84,54 @@ return {
                         settings = {
                             ["rust-analyzer"] = {
                                 cargo = {
-                                    features = "all"
+                                    features = "all",
                                 },
                                 inlayHints = {
-                                    enable = true
-                                }
-                            }
-                        }
-                    })
-                end,
-                zls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-                        settings = {
-                            zls = {
-                                enable_inlay_hints = true,
-                                enable_snippets = true,
-                                warn_style = true,
+                                    enable = true,
+                                },
                             },
                         },
                     })
-                    vim.g.zig_fmt_parse_errors = 0
-                    vim.g.zig_fmt_autosave = 0
                 end,
-                ["lua_ls"] = function()
+                lua_ls = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
+                    lspconfig.lua_ls.setup({
                         capabilities = capabilities,
                         settings = {
                             Lua = {
                                 runtime = { version = "Lua 5.1" },
                                 diagnostics = {
-                                    globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
+                                    globals = {
+                                        "bit",
+                                        "vim",
+                                        "it",
+                                        "describe",
+                                        "before_each",
+                                        "after_each",
+                                    },
+                                },
+                            },
+                        },
+                    })
                 end,
-            }
+            },
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
-                ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<cr>'] = cmp.mapping.confirm({ select = true }),
+                ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
+                ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
+                ["<cr>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
-                { name = 'nvim_lsp' },
-                { name = 'path' },
+                { name = "nvim_lsp" },
+                { name = "path" },
             }, {
-                { name = 'buffer' },
-            })
+                { name = "buffer" },
+            }),
         })
 
         vim.diagnostic.config({
@@ -140,5 +145,5 @@ return {
                 prefix = "",
             },
         })
-    end
+    end,
 }

@@ -16,11 +16,11 @@ M.setup = function()
     --- whitespace chars
     vim.opt.list = true -- enable listchars
     vim.opt.listchars = { -- chars to show
-        tab = '-->',
-        multispace = ' ',
-        trail = '.',
-        extends = '>',
-        precedes = '<',
+        tab = "-->",
+        multispace = " ",
+        trail = ".",
+        extends = ">",
+        precedes = "<",
     }
 
     --- persistant history/recovery
@@ -42,8 +42,8 @@ M.setup = function()
     vim.opt.incsearch = true -- show substitution preview in buffer
 
     --- undo history (reserve undos after neovim closes)
-    local undo_dir = vim.fn.stdpath('cache') .. "/undo/" -- undo dir path
-    vim.fn.mkdir(undo_dir, 'p') -- create undo dir
+    local undo_dir = vim.fn.stdpath("cache") .. "/undo/" -- undo dir path
+    vim.fn.mkdir(undo_dir, "p") -- create undo dir
     vim.opt.undodir = undo_dir -- set undo dir
     vim.opt.undofile = true -- enable undo file
     vim.opt.undolevels = 1000 -- undo history to keep
