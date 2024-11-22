@@ -69,8 +69,21 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "stylua",
                 "rust_analyzer",
+                "pyright",
+                "clangd",
+                "cssls",
+                "eslint",
+                "jsonls",
+                "ts_ls",
+                "taplo",
+                "html",
+                "yamlls",
+                "cmake",
+                "dockerls",
+                "checkmake",
+                "bashls",
+                "powershell_es",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
