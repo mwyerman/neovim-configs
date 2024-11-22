@@ -87,8 +87,24 @@ return {
                                     features = "all",
                                 },
                                 inlayHints = {
-                                    enable = true,
+                                    enable = true
                                 },
+                                cachePriming = {
+                                    enable = false
+                                }
+                            }
+                        }
+                    })
+                end,
+                zls = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.zls.setup({
+                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+                        settings = {
+                            zls = {
+                                enable_inlay_hints = true,
+                                enable_snippets = true,
+                                warn_style = true,
                             },
                         },
                     })

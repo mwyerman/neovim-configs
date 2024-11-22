@@ -5,11 +5,11 @@ M.setup = function()
         vim.o.shell = "pwsh.exe"
     end
 
-    --- enter terminal mode automatically
-    vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
-        pattern = "term://*",
-        command = "startinsert",
-    })
+    -- --- enter terminal mode automatically
+    -- vim.api.nvim_create_autocmd({"WinEnter", "BufWinEnter"}, {
+    --     pattern = "term://*",
+    --     command = "startinsert",
+    -- })
 
     --- window nav in terminal mode
     vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>")
@@ -17,8 +17,8 @@ M.setup = function()
     vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>")
     vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>")
 
-    --- exit terminal with C-\
-    vim.keymap.set("t", "<C-\\>", "<C-\\><C-N>")
+    -- --- exit terminal with C-\
+    -- vim.keymap.set("t", "<C-\\>", "<C-\\><C-N>")
 end
 
 M.new_term = function()
