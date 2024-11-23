@@ -31,6 +31,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -66,7 +67,7 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
-        require("mason-lspconfig").setup({
+        require("mason-tool-installer").setup({
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
@@ -83,7 +84,12 @@ return {
                 "dockerls",
                 "bashls",
                 "powershell_es",
+                "stylua",
+                "prettier",
+                "clang-format",
             },
+        })
+        require("mason-lspconfig").setup({
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup({
@@ -99,19 +105,23 @@ return {
                                     features = "all",
                                 },
                                 inlayHints = {
-                                    enable = true
+                                    enable = true,
                                 },
                                 cachePriming = {
-                                    enable = false
-                                }
-                            }
-                        }
+                                    enable = false,
+                                },
+                            },
+                        },
                     })
                 end,
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+                        root_dir = lspconfig.util.root_pattern(
+                            ".git",
+                            "build.zig",
+                            "zls.json"
+                        ),
                         settings = {
                             zls = {
                                 enable_inlay_hints = true,
