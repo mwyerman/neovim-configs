@@ -8,7 +8,7 @@ return {
                 end
                 return 20
             end,
-            open_mapping = "<C-\\><C-\\>",
+            open_mapping = "<C-\\>",
             direction = "vertical",
             shell = function()
                 if vim.loop.os_uname().sysname == "Windows_NT" then

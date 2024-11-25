@@ -10,6 +10,7 @@ M.setup = function()
     vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>")
     vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>")
     vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>")
+    vim.keymap.set("t", "<M-\\>", "<C-\\><C-n>")
 end
 
 M.new_term = function()
