@@ -8,14 +8,14 @@ return {
         },
         "nvim-telescope/telescope-project.nvim",
         "nvim-telescope/telescope-ui-select.nvim",
-        "nvim-telescope/telescope-file-browser.nvim",
+        -- "nvim-telescope/telescope-file-browser.nvim",
     },
     config = function()
         local builtin = require("telescope.builtin")
         local actions = require("telescope.actions")
         local telescope = require("telescope")
         local project_actions = require("telescope._extensions.project.actions")
-        local fb_actions = require("telescope").extensions.file_browser.actions
+        -- local fb_actions = require("telescope").extensions.file_browser.actions
 
         -- stylua: ignore start
         vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
@@ -25,7 +25,7 @@ return {
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "find help tags" })
         vim.keymap.set("n", "<leader>fp", "<cmd>Telescope project<cr>", { desc = "open project" })
         vim.keymap.set("n", "<leader>f ", builtin.resume, { desc = "resume search" })
-        vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, { desc = "file browser" })
+        -- vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, { desc = "file browser" })
         -- stylua: ignore end
 
         telescope.setup({
@@ -65,24 +65,24 @@ return {
                     -- },
                     on_project_selected = project_actions.change_working_directory,
                 },
-                file_browser = {
-                    hidden = {
-                        file_browser = true,
-                        folder_browser = true,
-                    },
-                    mappings = {
-                        i = {
-                            ["<C-l>"] = actions.select_default,
-                            ["<C-h>"] = fb_actions.goto_parent_dir,
-                        },
-                    },
-                },
+                -- file_browser = {
+                --     hidden = {
+                --         file_browser = true,
+                --         folder_browser = true,
+                --     },
+                --     mappings = {
+                --         i = {
+                --             ["<C-l>"] = actions.select_default,
+                --             ["<C-h>"] = fb_actions.goto_parent_dir,
+                --         },
+                --     },
+                -- },
             },
         })
 
         telescope.load_extension("project")
         telescope.load_extension("ui-select")
-        telescope.load_extension("file_browser")
+        -- telescope.load_extension("file_browser")
 
         -- using a pcall here because fzf compilation can be problematic on Windows
         -- this avoids errors when that occurs
